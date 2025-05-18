@@ -1,0 +1,48 @@
+/* src/app/styles/globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth; /* Glatko skrolovanje za anchor linkove */
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme {
+  --color-salon-purple: #4c3f75; /* Naslovi, linkovi, dugmad */
+  --color-salon-light: #d7d3de; /* Pozadine sekcija */
+  --color-salon-black: #000000; /* Tekst */
+  --color-salon-white: #ffffff; /* Pozadine i kontrast */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Hero overlay */
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
