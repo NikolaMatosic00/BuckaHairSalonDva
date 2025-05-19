@@ -1,9 +1,9 @@
 /* src/app/styles/globals.css */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 html {
-  scroll-behavior: smooth; /* Glatko skrolovanje za anchor linkove */
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -12,10 +12,10 @@ html {
 }
 
 @theme {
-  --color-salon-purple: #4c3f75; /* Naslovi, linkovi, dugmad */
-  --color-salon-light: #d7d3de; /* Pozadine sekcija */
-  --color-salon-black: #000000; /* Tekst */
-  --color-salon-white: #ffffff; /* Pozadine i kontrast */
+  --color-salon-purple: #4c3f75;
+  --color-salon-light: #d7d3de;
+  --color-salon-black: #000000;
+  --color-salon-white: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,7 +28,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
 }
 
@@ -36,7 +36,6 @@ a {
   text-decoration: none;
 }
 
-/* Hero overlay */
 #hero::before {
   content: '';
   position: absolute;
@@ -45,4 +44,16 @@ a {
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.4);
+}
+
+/* Fallback CSS animacija ako Tailwind ne radi */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
