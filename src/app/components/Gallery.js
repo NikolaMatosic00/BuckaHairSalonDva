@@ -19,7 +19,7 @@ export default function Gallery() {
         {haircuts.map((src, index) => (
           <Image
             key={index}
-            src=""
+            src="/"
             alt={`Primer frizure ${index + 1}`}
             width={300}
             height={300}
