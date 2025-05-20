@@ -18,18 +18,20 @@ import Footer from './components/Footer';
 export default function Home() {
   useEffect(() => {
     const elements = document.querySelectorAll('.animate-on-scroll');
-    console.log('Found elements for animation:', elements.length);
+    console.log('Found elements for animation:', elements.length, Array.from(elements).map(el => el.id || el.tagName));
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry, index) => {
           if (entry.isIntersecting) {
-            console.log(`Animating element ${index}:`, entry.target);
+            console.log(`Animating element ${index}:`, entry.target.id || entry.target.tagName);
             setTimeout(() => {
               entry.target.classList.add('visible');
               entry.target.style.willChange = 'auto';
-              console.log('Applied visible to:', entry.target);
-            }, index * 200); // 0.2s stagger
-            observer.unobserve(entry.target);
+              console.log('Applied visible to:', entry.target.id || entry.target.tagName);
+              if (!entry.target.id) {
+                observer.unobserve(entry.target);
+              }
+            }, index * 200);
           }
         });
       },
@@ -40,6 +42,21 @@ export default function Home() {
       if (element) {
         element.style.willChange = 'opacity, transform';
         observer.observe(element);
+        if (element.id === 'gallery') {
+          console.log('Gallery section height:', element.getBoundingClientRect().height);
+        }
+      }
+    });
+
+    // Provera slika u Gallery
+    const images = document.querySelectorAll('section#gallery img');
+    console.log('Found images in gallery:', images.length);
+    images.forEach((img, i) => {
+      if (img.complete) {
+        console.log(`Image ${i + 1} already loaded`);
+      } else {
+        img.addEventListener('load', () => console.log(`Image ${i + 1} loaded`));
+        img.addEventListener('error', () => console.log(`Image ${i + 1} failed to load`));
       }
     });
 
