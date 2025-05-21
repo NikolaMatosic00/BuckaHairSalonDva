@@ -1,4 +1,3 @@
-// src/app/page.js
 'use client';
 
 import { useEffect } from 'react';
@@ -68,19 +67,21 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-salon-white min-h-screen">
+    <div className="flex min-h-screen bg-salon-white">
       <Navbar />
-      <Hero />
-      <About />
-      <Team />
-      <Gallery />
-      <Products />
-      <Pricing />
-      <Reviews />
-      <Instagram />
-      <Contact />
-      <Map />
-      <Footer />
+      <div className="flex-1 ml-16">
+        <Hero />
+        <About />
+        <Team />
+        <Gallery />
+        <Products />
+        <Pricing />
+        <Reviews />
+        <Instagram />
+        <Contact />
+        <Map />
+        <Footer />
+      </div>
     </div>
   );
 }
