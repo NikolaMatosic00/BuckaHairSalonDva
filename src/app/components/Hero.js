@@ -33,7 +33,7 @@ export default function Hero() {
       </div>
 
       {/* Main Content */}
-      <div className="relative text-center text-gray-900 z-10">
+      <div className="relative text-center pink-900 z-10">
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4">
           Salon Lepote Bucka
         </h1>
@@ -57,7 +57,7 @@ export default function Hero() {
       {/* Social Media Links */}
       <div className="absolute bottom-6 flex space-x-4 z-10">
         <Link
-          href="https://instagram.com/salonlepotebucka"
+          href="https://instagram.com/salon_lepote_bucka"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-[#09001e] p-2 rounded-full text-white hover:bg-[#E1306C] transition-colors"
@@ -66,7 +66,7 @@ export default function Hero() {
           <FaInstagram className="w-6 h-6" />
         </Link>
         <Link
-          href="https://wa.me/1234567890"
+          href="https://wa.me/+381691168623"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-[#09001e] p-2 rounded-full text-white hover:bg-[#25D366] transition-colors"
@@ -75,7 +75,7 @@ export default function Hero() {
           <FaWhatsapp className="w-6 h-6" />
         </Link>
         <Link
-          href="https://facebook.com/salonlepotebucka"
+          href="https://www.facebook.com/salonbucka/"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-[#09001e] p-2 rounded-full text-white hover:bg-[#1877F2] transition-colors"
@@ -84,7 +84,7 @@ export default function Hero() {
           <FaFacebook className="w-6 h-6" />
         </Link>
         <Link
-          href="viber://chat?number=1234567890"
+          href="viber://chat?number=+381691168623"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-[#09001e] p-2 rounded-full text-white hover:bg-[#7360F2] transition-colors"
