@@ -67,9 +67,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex min-h-screen bg-salon-white">
+    <div className="flex min-h-screen bg-salon-white flex-col">
       <Navbar />
-      <div className="flex-1 ml-16">
+      <div className="flex-1 md:ml-16">
         <Hero />
         <About />
         <Team />
