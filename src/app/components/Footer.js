@@ -1,24 +1,25 @@
+// src/app/components/Footer.js
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaInstagram, FaFacebook, FaWhatsapp, FaViber } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="bg-salon-purple text-white py-12 sm:py-16 px-4 sm:px-6 md:px-16">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="relative bg-salon-purple text-white px-6 sm:px-12 md:px-24 py-16">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Branding */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
           <Image
             src="/logo/logo192x192.png"
             alt="Salon Lepote Bucka"
-            width={60}
-            height={60}
-            className="mb-4"
+            width={90}
+            height={90}
+            className="m-auto mb-4"
           />
-          <p className="text-sm sm:text-base font-light mb-4">
+          <p className="text-sm opacity-90 leading-relaxed">
             Istaknite svoju lepotu uz našu profesionalnu negu. Vaša kosa zaslužuje najbolje.
           </p>
-          <div className="flex space-x-4">
+                   <div className="flex space-x-4 my-4">
             <a
               href="https://instagram.com/salon_lepote_bucka"
               target="_blank"
@@ -60,57 +61,45 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-lg sm:text-xl font-semibold mb-4">Brzi Linkovi</h3>
-          <ul className="space-y-2 text-sm sm:text-base">
-            <li><Link href="/#hero" className="hover:underline">Početna</Link></li>
-            <li><Link href="/#pricing" className="hover:underline">Usluge</Link></li>
-            <li><Link href="/#about" className="hover:underline">O Nama</Link></li>
-            <li><Link href="/#contact" className="hover:underline">Kontakt</Link></li>
+          <h3 className="text-lg font-semibold mb-4">Brzi Linkovi</h3>
+          <ul className="space-y-2 text-sm opacity-90">
+            <FooterLink href="/#hero">Početna</FooterLink>
+            <FooterLink href="/#pricing">Usluge</FooterLink>
+            <FooterLink href="/#about">O Nama</FooterLink>
+            <FooterLink href="/#contact">Kontakt</FooterLink>
           </ul>
         </div>
 
         {/* Contact Info */}
         <div>
-          <h3 className="text-lg sm:text-xl font-semibold mb-4">Kontakt</h3>
-          <ul className="space-y-2 text-sm sm:text-base">
-            <li>
-              <a href="tel:+381691168623" className="hover:underline">
-                +381 69 116 8623
-              </a>
-            </li>
-            <li>
-              <a href="mailto:dragana.bucka@gmail.com" className="hover:underline">
-                dragana.bucka@gmail.com
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://maps.google.com/?q=1300+kaplara,+Novi+Sad"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline"
-              >
-                1300 kaplara, Novi Sad
-              </a>
-            </li>
+          <h3 className="text-lg font-semibold mb-4">Kontakt</h3>
+          <ul className="space-y-2 text-sm opacity-90">
+            <FooterLink href="tel:+381691168623">+381 69 116 8623</FooterLink>
+            <FooterLink href="mailto:dragana.bucka@gmail.com">dragana.bucka@gmail.com</FooterLink>
+            <FooterLink
+              href="https://maps.google.com/?q=1300+kaplara+12,+Novi+Sad"
+              target="_blank"
+            >
+              1300 kaplara 12, Novi Sad
+            </FooterLink>
           </ul>
         </div>
 
-        {/* Newsletter Signup */}
+        {/* Newsletter */}
         <div>
-          <h3 className="text-lg sm:text-xl font-semibold mb-4">Pretplatite se</h3>
-          <p className="text-sm sm:text-base font-light mb-4">
+          <h3 className="text-lg font-semibold mb-4">Pretplatite se</h3>
+          <p className="text-sm opacity-90 mb-4 leading-relaxed">
             Prijavite se za novosti i posebne ponude!
           </p>
-          <form className="flex flex-col sm:flex-row gap-2">
+          <form className="flex flex-col sm:flex-row gap-3">
             <input
               type="email"
               placeholder="Vaša email adresa"
-              className="px-4 py-2 rounded-full text-[#09001e] focus:outline-none focus:ring-2 focus:ring-white"
+              className="w-full px-4 py-2 rounded-full text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:bg-white transition"
             />
             <button
               type="submit"
-              className="bg-white text-[#09001e] px-4 py-2 rounded-full font-medium hover:bg-gray-200 transition-colors"
+              className="px-6 py-2 rounded-full bg-white text-[#09001e] font-medium hover:bg-gray-100 transition"
             >
               Prijavi se
             </button>
@@ -119,19 +108,43 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="mt-12 pt-8 border-t border-gray-400 text-center">
-        <p className="text-sm sm:text-base font-normal mb-2">
+      <div className="mt-16 pt-8 border-t border-white/20 text-center text-sm opacity-80">
+        <p className="mb-2">
           Salon Lepote Bucka © {new Date().getFullYear()}. Sva prava zadržana.
         </p>
-        <div className="flex justify-center space-x-4 text-sm">
-          <Link href="/politika-privatnosti" className="hover:underline">
-            Politika Privatnosti
-          </Link>
-          <Link href="/uslovi-koriscenja" className="hover:underline">
-            Uslovi Korišćenja
-          </Link>
+        <div className="flex justify-center space-x-4">
+          <FooterLink href="/politika-privatnosti">Politika Privatnosti</FooterLink>
+          <FooterLink href="/uslovi-koriscenja">Uslovi Korišćenja</FooterLink>
         </div>
       </div>
     </footer>
+  );
+}
+
+function SocialIcon({ href, color, icon }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:scale-110 transition-transform text-white hover:text-white"
+      style={{ color }}
+    >
+      {icon}
+    </a>
+  );
+}
+
+function FooterLink({ href, children, target }) {
+  return (
+    <li>
+      <Link
+        href={href}
+        target={target}
+        className="hover:underline hover:text-white transition-colors"
+      >
+        {children}
+      </Link>
+    </li>
   );
 }
