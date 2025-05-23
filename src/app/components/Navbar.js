@@ -52,7 +52,7 @@ export default function Navbar() {
       <div className="md:hidden fixed top-0 left-0 w-full bg-black z-50 flex items-center justify-between px-4 py-3">
         <Link href="#hero">
           <Image
-            src="/logo/logo192x192.png"
+            src="/logo/logo192x192white.png"
             alt="Salon Lepote Bucka"
             width={40}
             height={40}
