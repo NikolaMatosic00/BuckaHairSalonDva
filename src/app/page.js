@@ -1,3 +1,4 @@
+// app/page.js
 'use client';
 
 import { useEffect } from 'react';
@@ -18,11 +19,13 @@ export default function Home() {
   useEffect(() => {
     const elements = document.querySelectorAll('.animate-on-scroll');
     console.log('Found elements for animation:', elements.length, Array.from(elements).map(el => el.id || el.tagName));
+
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry, index) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            console.log(`Animating element ${index}:`, entry.target.id || entry.target.tagName);
+            const delay = parseInt(entry.target.dataset.animateDelay || 0);
+            console.log(`Animating element with delay ${delay}ms:`, entry.target.id || entry.target.tagName);
             setTimeout(() => {
               entry.target.classList.add('visible');
               entry.target.style.willChange = 'auto';
@@ -30,7 +33,7 @@ export default function Home() {
               if (!entry.target.id) {
                 observer.unobserve(entry.target);
               }
-            }, index * 200);
+            }, delay);
           }
         });
       },
