@@ -5,21 +5,21 @@ import { FaInstagram, FaFacebook, FaWhatsapp, FaViber } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="relative bg-salon-purple text-white px-6 sm:px-12 md:px-24 py-16">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className="bg-salon-purple text-white px-6 sm:px-12 md:px-24 py-16">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
         {/* Branding */}
-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-4">
           <Image
-            src="/logo/logo192x192.png"
+            src="/logo/logo192x192white.png"
             alt="Salon Lepote Bucka"
             width={90}
             height={90}
-            className="m-auto mb-4"
+            className="m-auto"
           />
           <p className="text-sm opacity-90 leading-relaxed">
             Istaknite svoju lepotu uz našu profesionalnu negu. Vaša kosa zaslužuje najbolje.
           </p>
-                   <div className="flex space-x-4 my-4">
+          <div className="flex space-x-4 my-4">
             <a
               href="https://instagram.com/salon_lepote_bucka"
               target="_blank"
@@ -61,8 +61,8 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Brzi Linkovi</h3>
-          <ul className="space-y-2 text-sm opacity-90">
+          <SectionTitle>Brzi Linkovi</SectionTitle>
+          <ul className="space-y-2 mt-4 text-sm opacity-90">
             <FooterLink href="/#hero">Početna</FooterLink>
             <FooterLink href="/#pricing">Usluge</FooterLink>
             <FooterLink href="/#about">O Nama</FooterLink>
@@ -72,38 +72,14 @@ export default function Footer() {
 
         {/* Contact Info */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Kontakt</h3>
-          <ul className="space-y-2 text-sm opacity-90">
+          <SectionTitle>Kontakt</SectionTitle>
+          <ul className="space-y-2 mt-4 text-sm opacity-90">
             <FooterLink href="tel:+381691168623">+381 69 116 8623</FooterLink>
             <FooterLink href="mailto:dragana.bucka@gmail.com">dragana.bucka@gmail.com</FooterLink>
-            <FooterLink
-              href="https://maps.google.com/?q=1300+kaplara+12,+Novi+Sad"
-              target="_blank"
-            >
+            <FooterLink href="https://maps.google.com/?q=1300+kaplara+12,+Novi+Sad" target="_blank">
               1300 kaplara 12, Novi Sad
             </FooterLink>
           </ul>
-        </div>
-
-        {/* Newsletter */}
-        <div>
-          <h3 className="text-lg font-semibold mb-4">Pretplatite se</h3>
-          <p className="text-sm opacity-90 mb-4 leading-relaxed">
-            Prijavite se za novosti i posebne ponude!
-          </p>
-          <form className="flex flex-col sm:flex-row gap-3">
-            <input
-              type="email"
-              placeholder="Vaša email adresa"
-              className="w-full px-4 py-2 rounded-full text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:bg-white transition"
-            />
-            <button
-              type="submit"
-              className="px-6 py-2 rounded-full bg-white text-[#09001e] font-medium hover:bg-gray-100 transition"
-            >
-              Prijavi se
-            </button>
-          </form>
         </div>
       </div>
 
@@ -121,13 +97,21 @@ export default function Footer() {
   );
 }
 
+function SectionTitle({ children }) {
+  return (
+    <h3 className="text-lg sm:text-xl font-semibold border-b border-white/30 pb-1 mb-1">
+      {children}
+    </h3>
+  );
+}
+
 function SocialIcon({ href, color, icon }) {
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="hover:scale-110 transition-transform text-white hover:text-white"
+      className="hover:scale-110 transition-transform"
       style={{ color }}
     >
       {icon}
