@@ -14,7 +14,9 @@ export default function Navbar() {
     { href: '#products', label: 'Proizvodi' },
     { href: '#pricing', label: 'Cenovnik' },
     { href: '#reviews', label: 'Recenzije' },
+    { href: '#instagram', label: 'Instagram' },
     { href: '#contact', label: 'Kontakt' },
+    { href: '#map', label: 'Mapa' },
   ];
 
   const toggleMenu = () => {
