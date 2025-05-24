@@ -1,6 +1,7 @@
 // src/app/layout.js
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import { Poppins, Great_Vibes } from 'next/font/google';
 import './styles/globals.css';
 
 export const metadata = {
@@ -8,10 +9,24 @@ export const metadata = {
   description: 'Transformišite svoj stil uz naše profesionalne frizerske i kozmetičke usluge u Salonu Ime.',
 };
 
+const poppins = Poppins({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  variable: '--font-poppins',
+  display: 'swap',
+});
+
+const greatVibes = Great_Vibes({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-great-vibes',
+  display: 'swap',
+});
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="sr">
-      <body>
+<html lang="sr" className={`${poppins.variable} ${greatVibes.variable}`}>
+     <body>
         {children}
       </body>
     </html>
