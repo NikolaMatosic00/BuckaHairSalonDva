@@ -25,10 +25,10 @@ export default function Reviews() {
         </div>
         <div className="mt-8 animate-on-scroll" data-animate-delay="400">
           <a
-            href="https://maps.google.com/?q=Frizerski+Salon+Bucka,1300+kaplara+12,Novi+Sad"
+            href="https://search.google.com/local/writereview?placeid=ChIJTzph2xgQW0cRtdyHXj8V9NQ"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center justify-center bg-salon-purple text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base transition-all"
+            className="group inline-flex items-center justify-center bg-salon-purple text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base transition-all duration-300"
           >
             <span className="inline-flex items-center justify-center">
               <svg
