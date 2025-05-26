@@ -8,7 +8,7 @@ export default function Reviews() {
     >
       <div className="max-w-7xl mx-auto relative">
         <h2
-          className="text-5xl sm:text-7xl md:text-8xl font-bold text-salon-purple mb-8 animate-on-scroll great-vibes"
+          className="text-5xl sm:text-7xl md:text-8xl font-bold text-salon-purple mb-12 animate-on-scroll great-vibes"
           data-animate-type="heading"
         >
           Recenzije klijenata
