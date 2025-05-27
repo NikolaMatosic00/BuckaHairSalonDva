@@ -19,6 +19,7 @@ html {
   --color-salon-light-purple: #dcc9ff;
   --color-salon-black: #000000;
   --color-salon-white: #ffffff;
+  --color-salon-gray: #252525;
 }
 
 @media (prefers-color-scheme: dark) {
