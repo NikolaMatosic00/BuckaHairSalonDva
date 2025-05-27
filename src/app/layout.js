@@ -26,6 +26,10 @@ const greatVibes = Great_Vibes({
 export default function RootLayout({ children }) {
   return (
 <html lang="sr" className={`${poppins.variable} ${greatVibes.variable}`}>
+     <head>
+       {/* Elfsight skripta */}
+        <script src="https://static.elfsight.com/platform/platform.js" async />
+     </head>
      <body>
         {children}
       </body>

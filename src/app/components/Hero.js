@@ -34,7 +34,7 @@ export default function Hero() {
 
       {/* Main Content */}
       <div className="relative text-center pink-900 z-10">
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4">
+        <h1 className="text-6xl sm:text-5xl md:text-7xl font-bold mb-4 great-vibes">
           Salon Lepote Bucka
         </h1>
         <p className="text-base sm:text-lg md:text-2xl mb-6 drop-shadow-md">

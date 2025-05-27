@@ -16,8 +16,14 @@ export default function Pricing() {
   return (
     <section
       id="pricing"
-      className="py-16 sm:py-24 px-4 sm:px-6 md:px-16 bg-gradient-to-br from-[#2c2c52] via-[#16213e] to-[#0f3460] min-h-screen flex flex-col items-center justify-start relative overflow-hidden scroll-mt-20"
+      className="py-16 sm:py-14 px-4 sm:px-6 md:px-16 bg-gradient-to-br from-[#2c2c52] via-[#16213e] to-[#0f3460] min-h-screen flex flex-col items-center justify-start relative overflow-hidden scroll-mt-20"
     >
+              <h2
+          className="text-5xl sm:text-7xl md:text-8xl font-bold text-white mb-18 animate-on-scroll great-vibes"
+          data-animate-type="heading"
+        >
+          Cenovnik
+        </h2>
       {/* Central faded butterfly in background */}
       <Image
         src="/background-images/butterfly_1_white.svg"
