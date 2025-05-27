@@ -4,7 +4,7 @@ export default function Reviews() {
   return (
     <section
       id="reviews"
-      className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 text-center bg-gradient-to-b from-white to-salon-light"
+      className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 text-center bg-gradient-to-b from-salon-light to-white"
     >
       <div className="max-w-7xl mx-auto relative">
         <h2
