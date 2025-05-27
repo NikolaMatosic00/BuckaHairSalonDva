@@ -55,7 +55,7 @@ export default function Hero() {
       </div>
 
       {/* Social Media Links */}
-      <div className="absolute bottom-6 flex space-x-4 z-10">
+      <div className="absolute bottom-16 flex space-x-4 z-10">
         <Link
           href="https://instagram.com/salon_lepote_bucka"
           target="_blank"
@@ -93,6 +93,14 @@ export default function Hero() {
           <FaViber className="w-6 h-6" />
         </Link>
       </div>
+
+      {/* Fading Gray Line */}
+      <div
+        className="absolute bottom-0 w-[80%] sm:w-[80%] h-px mx-auto"
+        style={{
+          background: 'linear-gradient(to right, transparent, #D1D5DB 30%, #D1D5DB 70%, transparent)',
+        }}
+      />
     </section>
   );
 }
