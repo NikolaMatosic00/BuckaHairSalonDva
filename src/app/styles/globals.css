@@ -20,6 +20,7 @@ html {
   --color-salon-black: #000000;
   --color-salon-white: #ffffff;
   --color-salon-gray: #252525;
+  --color-salon-dark-purple: #3b2f5a; /* Dodato za hover efekte */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -99,4 +100,19 @@ a {
 
 .group:hover {
   transform: scale(1.05);
+}
+
+/* Wobble efekat za ikonice */
+@keyframes wobble {
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(-5deg); }
+  30% { transform: rotate(5deg); }
+  45% { transform: rotate(-3deg); }
+  60% { transform: rotate(3deg); }
+  75% { transform: rotate(-1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.wobble-icon:hover svg {
+  animation: wobble 0.5s ease-in-out;
 }
