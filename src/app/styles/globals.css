@@ -116,3 +116,16 @@ a {
 .wobble-icon:hover svg {
   animation: wobble 0.5s ease-in-out;
 }
+
+
+/* Color flow animation for title */
+@keyframes colorFlow {
+  0% { color: #000000; }
+  50% { color: #43346a; }
+  100% { color: #000000; }
+}
+
+.color-flow {
+  animation: colorFlow 4s ease-in-out infinite;
+}
+
