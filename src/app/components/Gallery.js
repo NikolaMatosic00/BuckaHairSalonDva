@@ -13,10 +13,20 @@ export default function Gallery() {
   const [speed] = useState(1); // px po frame-u
   const [direction] = useState(1); // stalno ide desno
   const [isMounted, setIsMounted] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   // Sprečava hydration error
   useEffect(() => {
     setIsMounted(true);
+  }, []);
+
+  // Animacije učitavanja
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   // Animacija za naslov
@@ -136,7 +146,7 @@ export default function Gallery() {
         style={{ 
           opacity: 0, 
           transform: 'translateY(30px)', 
-          transition: 'opacity 0.6s ease-out, transform 0.6s ease-out' 
+          transition: 'opacity 0.8s ease-out, transform 0.8s ease-out' 
         }}
       >
         Galerija i usluge
@@ -144,73 +154,119 @@ export default function Gallery() {
       
       {/* Sekcija sa tehnikama */}
       <div className="max-w-7xl mx-auto mb-12">
+        {/* Prva sekcija - Color tehnike */}
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-8 mb-4">
           {/* Slika sa leve strane */}
-          <div className="flex-1 lg:order-1">
+          <div className={`flex-1 lg:order-1 transition-all duration-1200 ease-out delay-300 ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
+          }`}>
             <Image
               src="/haircuts/haircut12.jpg"
               alt="Color tehnike"
               width={500}
               height={600}
-              className="w-full h-[450px] lg:h-[550px] object-cover shadow-lg"
+              className="w-full h-[450px] lg:h-[550px] object-cover shadow-lg hover:scale-105 transition-transform duration-500"
             />
           </div>
           
           {/* Tekst sa desne strane */}
-          <div className="flex-1 lg:order-2 px-4 lg:px-8 flex flex-col items-center">
+          <div className={`flex-1 lg:order-2 px-4 lg:px-8 flex flex-col items-center transition-all duration-1200 ease-out delay-500 ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
+          }`}>
             <h3 className="text-3xl lg:text-4xl font-bold text-salon-black mb-6 text-center">
               COLOR TEHNIKE
             </h3>
             <div className="space-y-3 text-xl text-salon-black">
-              <p className="font-medium text-left">– Pramenovi u 2 boje</p>
-              <p className="font-medium text-left">– Pramenovi u 3 boje</p>
-              <p className="font-medium text-left">– Balayage</p>
-              <p className="font-medium text-left">– Blažiranje</p>
-              <p className="font-medium text-left">– Farbanje izrastka</p>
+              {[
+                '– Pramenovi u 2 boje',
+                '– Pramenovi u 3 boje', 
+                '– Balayage',
+                '– Blažiranje',
+                '– Farbanje izrastka'
+              ].map((item, index) => (
+                <p 
+                  key={index}
+                  className={`font-medium text-left transition-all duration-800 ease-out ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+                  }`}
+                  style={{
+                    transitionDelay: `${700 + index * 100}ms`
+                  }}
+                >
+                  {item}
+                </p>
+              ))}
             </div>
           </div>
         </div>
         
-        {/* Druga sekcija - obrnut redosled */}
+        {/* Druga sekcija - Oblikovanje kose - obrnut redosled */}
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-8">
           {/* Tekst sa leve strane */}
-          <div className="flex-1 lg:order-1 px-4 lg:px-8 flex flex-col items-center">
+          <div className={`flex-1 lg:order-1 px-4 lg:px-8 flex flex-col items-center transition-all duration-1200 ease-out delay-700 ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
+          }`}>
             <h3 className="text-3xl lg:text-4xl font-bold text-salon-black mb-6 text-center">
               OBLIKOVANJE KOSE
             </h3>
             <div className="space-y-3 text-xl text-salon-black">
-              <p className="font-medium text-left">– Šišanje</p>
-              <p className="font-medium text-left">– Feniranje</p>
-              <p className="font-medium text-left">– Talasi</p>
-              <p className="font-medium text-left">– Lokne</p>
-              <p className="font-medium text-left">– Svečane frizure</p>
+              {[
+                '– Šišanje',
+                '– Feniranje',
+                '– Talasi', 
+                '– Lokne',
+                '– Svečane frizure'
+              ].map((item, index) => (
+                <p 
+                  key={index}
+                  className={`font-medium text-left transition-all duration-800 ease-out ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+                  }`}
+                  style={{
+                    transitionDelay: `${1200 + index * 100}ms`
+                  }}
+                >
+                  {item}
+                </p>
+              ))}
             </div>
           </div>
           
           {/* Slika sa desne strane */}
-          <div className="flex-1 lg:order-2">
+          <div className={`flex-1 lg:order-2 transition-all duration-1200 ease-out delay-900 ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'
+          }`}>
             <Image
               src="/haircuts/haircut15.jpg"
               alt="Oblikovanje kose"
               width={500}
               height={600}
-              className="w-full h-[450px] lg:h-[550px] object-cover shadow-lg"
+              className="w-full h-[450px] lg:h-[550px] object-cover shadow-lg hover:scale-105 transition-transform duration-500"
             />
           </div>
         </div>
       </div>
       
-      <div className="relative">
-        {/* Strelica levo - sakrivena na mobilnim */}
+      {/* Carousel sekcija sa animacijom */}
+      <div className={`relative transition-all duration-1000 ease-out delay-1100 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}>
+        {/* Strelica levo */}
         <button
           onClick={() => scrollByOne(-1)}
-          className="flex absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white shadow-lg rounded-full transition items-center justify-center w-10 h-10 md:w-12 md:h-12"
+          className={`flex absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white shadow-lg rounded-full transition-all duration-300 items-center justify-center w-10 h-10 md:w-12 md:h-12 hover:scale-110 ${
+            isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+          }`}
+          style={{
+            transitionDelay: isVisible ? '1300ms' : '0ms'
+          }}
           aria-label="Levo"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8641f4" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="15 18 9 12 15 6" />
           </svg>
         </button>
+        
         {/* Carousel */}
         <div
           ref={scrollRef}
@@ -222,7 +278,12 @@ export default function Gallery() {
               key={index}
               className={`flex-shrink-0 flex items-center justify-center transition-all duration-500 ${
                 index % 2 === 0 ? 'mt-20 md:mt-32' : 'mb-20 md:mb-32'
-              } rounded-xl overflow-hidden w-[280px] h-[320px] md:w-[480px] md:h-[440px]`}
+              } rounded-xl overflow-hidden w-[280px] h-[320px] md:w-[480px] md:h-[440px] hover:scale-105`}
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'scale(1)' : 'scale(0.9)',
+                transition: `opacity 600ms ease-out ${1400 + (index % 10) * 50}ms, transform 600ms ease-out ${1400 + (index % 10) * 50}ms`
+              }}
             >
               <Image
                 src={src}
@@ -238,10 +299,16 @@ export default function Gallery() {
             </div>
           ))}
         </div>
-        {/* Strelica desno - sakrivena na mobilnim */}
+        
+        {/* Strelica desno */}
         <button
           onClick={() => scrollByOne(1)}
-          className="flex absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white shadow-lg rounded-full transition items-center justify-center w-10 h-10 md:w-12 md:h-12"
+          className={`flex absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white shadow-lg rounded-full transition-all duration-300 items-center justify-center w-10 h-10 md:w-12 md:h-12 hover:scale-110 ${
+            isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+          }`}
+          style={{
+            transitionDelay: isVisible ? '1300ms' : '0ms'
+          }}
           aria-label="Desno"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8641f4" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
