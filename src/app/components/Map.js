@@ -17,17 +17,7 @@ export default function Map() {
       className="py-12 sm:py-16 px-4 sm:px-6 md:px-16 text-center bg-gradient-to-b from-[#F7F2FF] to-white"
     >
       <div className="max-w-7xl mx-auto">
-        {/* Heading */}
-        <motion.h2
-          className="text-5xl sm:text-7xl font-bold text-salon-purple mb-10 great-vibes"
-          custom={0}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={itemVariants}
-        >
-          Pronađite nas
-        </motion.h2>
+        
 
         {/* Google Maps Iframe */}
         <motion.div
