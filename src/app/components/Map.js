@@ -31,11 +31,12 @@ export default function Map() {
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2809.4186729876543!2d19.83475591556348!3d45.24327897909876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475b1061b0c2b2b1%3A0x5f5e2b8c1d0e1b2c!2s1300%20Kaplara%2012%2C%20Novi%20Sad%2C%20Serbia!5e0!3m2!1sen!2srs!4v1698765432100!5m2!1sen!2srs"
             width="100%"
-            height="400"
+            className="w-full h-[250px] sm:h-[400px] md:h-[500px]"
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Salon Lepote Bucka Location"
+            aria-label="Google Maps location of Salon Lepote Bucka in Novi Sad, Serbia"
           ></iframe>
         </motion.div>
 
@@ -61,3 +62,5 @@ export default function Map() {
     </section>
   );
 }
+
+
