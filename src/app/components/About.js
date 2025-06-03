@@ -20,7 +20,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <h2
-          className="text-5xl sm:text-7xl md:text-8xl font-bold text-salon-purple mb-8 great-vibes animate-on-scroll"
+          className="text-5xl sm:text-7xl md:text-8xl text-salon-black mb-8 great-vibes animate-on-scroll"
           data-animate-type="heading"
         >
           O nama
