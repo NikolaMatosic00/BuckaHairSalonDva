@@ -20,7 +20,7 @@ export default function Contact() {
       <div className="max-w-3xl mx-auto">
         {/* Heading */}
         <h2
-          className="text-5xl sm:text-7xl font-bold text-salon-purple mb-10 great-vibes animate-on-scroll"
+          className="text-5xl sm:text-7xl text-salon-black mb-10 great-vibes animate-on-scroll"
           data-animate-type="heading"
         >
           Kontaktirajte nas
