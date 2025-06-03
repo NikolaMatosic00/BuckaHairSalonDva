@@ -1,47 +1,59 @@
 // src/app/components/Products.js
+'use client';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 export default function Products() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <section id="products" className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 bg-salon-light">
-      <h2 className="text-3xl sm:text-4xl font-bold text-salon-purple text-center mb-8 animate-on-scroll">
-        Proizvodi
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8 max-w-7xl mx-auto">
-        <div className="bg-salon-white p-4 sm:p-6 rounded-lg shadow-md animate-on-scroll">
-          <Image
-            src="/products1.jpg" // Zameni sa stvarnom slikom
-            alt="Proizvod 1"
-            width={300}
-            height={300}
-            className="rounded-lg mb-4 w-full h-auto"
-          />
-          <h3 className="text-lg sm:text-xl font-semibold text-salon-purple">Šampon za volumen</h3>
-          <p className="text-sm sm:text-base text-salon-black font-normal">Pruža kosi punoću i sjaj.</p>
-        </div>
-        <div className="bg-salon-white p-4 sm:p-6 rounded-lg shadow-md animate-on-scroll">
-          <Image
-            src="/products2.jpg" // Zameni sa stvarnom slikom
-            alt="Proizvod 2"
-            width={300}
-            height={300}
-            className="rounded-lg mb-4 w-full h-auto"
-          />
-          <h3 className="text-lg sm:text-xl font-semibold text-salon-purple">Maska za hidrataciju</h3>
-          <p className="text-sm sm:text-base text-salon-black font-normal">Obnavlja suvu i oštećenu kosu.</p>
-        </div>
-        <div className="bg-salon-white p-4 sm:p-6 rounded-lg shadow-md animate-on-scroll">
-          <Image
-            src="/products3.jpg" // Zameni sa stvarnom slikom
-            alt="Proizvod 3"
-            width={300}
-            height={300}
-            className="rounded-lg mb-4 w-full h-auto"
-          />
-          <h3 className="text-lg sm:text-xl font-semibold text-salon-purple">Ulje za sjaj</h3>
-          <p className="text-sm sm:text-base text-salon-black font-normal">Daje kosi prirodan sjaj.</p>
+    <>
+      {/* Crna traka sa logovima */}
+      <div className={`bg-black py-2 w-full transition-all duration-1000 ease-out ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}>
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex justify-center items-center gap-16 md:gap-24 lg:gap-32">
+            <div className="w-24 h-16 md:w-32 md:h-20">
+              <Image
+                src="/products/ProductB1.jpg"
+                alt="Brand logo 1"
+                width={128}
+                height={80}
+                className="w-full h-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+            
+            <div className="w-24 h-14 md:w-56 md:h-29 mt-5">
+              <Image
+                src="/products/ProductB2.png"
+                alt="Brand logo 2"
+                width={144}
+                height={72}
+                className="w-full h-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+            
+            <div className="w-14 h-9 md:w-20 md:h-14">
+              <Image
+                src="/products/ProductB3.jpg"
+                alt="Brand logo 3"
+                width={80}
+                height={56}
+                className="w-full h-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </>
   );
 }
