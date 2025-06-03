@@ -21,7 +21,7 @@ export default function Products() {
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}>
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-center items-center gap-16 md:gap-24 lg:gap-32">
+         <div className="flex justify-around items-center gap-2 xs:gap-4 sm:gap-8 md:gap-12 lg:gap-16">
             <div className="w-24 h-16 md:w-32 md:h-20">
               <Image
                 src="/products/ProductB1.jpg"
