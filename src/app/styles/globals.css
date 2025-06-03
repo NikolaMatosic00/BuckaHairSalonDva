@@ -98,8 +98,15 @@ a {
   font-family: var(--font-great-vibes), cursive;
 }
 
+.group{
+  border: 1px solid transparent;
+}
+
 .group:hover {
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
 }
 
 /* Wobble efekat za ikonice */
