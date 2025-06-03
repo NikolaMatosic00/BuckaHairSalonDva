@@ -56,7 +56,7 @@ export default function About() {
             viewport={{ once: true }}
             variants={statVariants}
           >
-            <h3 className="text-4xl sm:text-5xl font-bold text-salon-black">10+</h3>
+            <h3 className="text-4xl sm:text-5xl text-salon-black">10+</h3>
             <p className="text-sm sm:text-base text-salon-black font-light">Godina iskustva</p>
           </motion.div>
           <motion.div
@@ -67,7 +67,7 @@ export default function About() {
             viewport={{ once: true }}
             variants={statVariants}
           >
-            <h3 className="text-4xl sm:text-5xl font-bold text-salon-black">3</h3>
+            <h3 className="text-4xl sm:text-5xl text-salon-black">3</h3>
             <p className="text-sm sm:text-base text-salon-black font-light">Stručna zaposlena</p>
           </motion.div>
           <motion.div
@@ -78,7 +78,7 @@ export default function About() {
             viewport={{ once: true }}
             variants={statVariants}
           >
-            <h3 className="text-4xl sm:text-5xl font-bold text-salon-gray">1000+</h3>
+            <h3 className="text-4xl sm:text-5xl text-salon-gray">1000+</h3>
             <p className="text-sm sm:text-base text-salon-black font-light">Zadovoljnih klijenata</p>
           </motion.div>
         </div>
@@ -91,7 +91,7 @@ export default function About() {
           >
             <span className="inline-flex items-center justify-center">
               <FaCalendarCheck
-                className="w-0 h-5 opacity-0 group-hover:w-5 group-hover:opacity-100 mr-2 transition-all duration-300"
+                className="w-0 h-5 opacity-0 group-hover:w-5 group-hover:opacity-100 mr-2 transition-all duration-450"
                 aria-hidden="true"
               />
               <span>Zakaži Termin</span>
