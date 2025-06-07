@@ -26,15 +26,17 @@ export default function Hero() {
           alt="Butterfly 2"
           width={512}
           height={512}
-          className="absolute top-0 right-0 w-72 md:w-[20rem] lg:w-[28rem] z-0"
+          className="absolute top-0 right-0 w-72 md:w-[20rem] lg:w-[24rem] z-0"
           style={{ objectFit: 'contain', objectPosition: '100% 0' }}
           aria-hidden="true"
         />
       </div>
 
       {/* Main Content */}
-      <div className="relative text-center pink-900 z-10">
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4">
+      <div className="relative text-center text-salon-black z-10">
+        <h1
+          className="text-6xl sm:text-5xl md:text-7xl font-bold mb-4 great-vibes gradient-title"
+        >
           Salon Lepote Bucka
         </h1>
         <p className="text-base sm:text-lg md:text-2xl mb-6 drop-shadow-md">
@@ -55,7 +57,7 @@ export default function Hero() {
       </div>
 
       {/* Social Media Links */}
-      <div className="absolute bottom-6 flex space-x-4 z-10">
+      <div className="absolute bottom-16 flex items-center space-x-4 z-10">
         <Link
           href="https://instagram.com/salon_lepote_bucka"
           target="_blank"
@@ -93,6 +95,14 @@ export default function Hero() {
           <FaViber className="w-6 h-6" />
         </Link>
       </div>
+
+      {/* Fading Gray Line */}
+      <div
+        className="absolute bottom-0 w-[80%] sm:w-[80%] h-px mx-auto"
+        style={{
+          background: 'linear-gradient(to right, transparent, #D1D5DB 30%, #D1D5DB 70%, transparent)',
+        }}
+      />
     </section>
   );
 }

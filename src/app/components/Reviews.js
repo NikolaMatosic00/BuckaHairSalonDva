@@ -1,34 +1,47 @@
-// src/app/components/Reviews.js
+'use client';
+
 export default function Reviews() {
   return (
-    <section id="reviews" className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 bg-salon-light">
-      <h2 className="text-3xl sm:text-4xl font-bold text-salon-purple text-center mb-8 animate-on-scroll">
-        Recenzije klijenata
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8 max-w-7xl mx-auto">
-        <div className="bg-salon-white p-4 sm:p-6 rounded-lg shadow-md animate-on-scroll">
-          <p className="text-sm sm:text-base text-salon-black italic font-normal">
-            "Neverovatno iskustvo! Dragana mi je napravila savršenu frizuru, a atmosfera je veoma prijatna."
-          </p>
-          <p className="text-salon-purple font-medium mt-4 text-sm sm:text-base">
-            Milica K. ★★★★★
-          </p>
+    <section
+      id="reviews"
+      className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 text-center bg-gradient-to-b from-salon-light to-white"
+    >
+      <div className="max-w-7xl mx-auto relative">
+        <h2
+          className="text-5xl sm:text-7xl md:text-8xl text-salon-purple mb-12 animate-on-scroll great-vibes"
+          data-animate-type="heading"
+        >
+          Recenzije klijenata
+        </h2>
+        <div
+          className="max-w-5xl mx-auto animate-on-scroll review-card"
+          data-animate-delay="200"
+        >
+          {/* Elfsight Google Reviews Widget */}
+          <div
+            className="elfsight-app-0bb367ae-58ce-4223-95d2-3ed3313f3939"
+            data-elfsight-app-lazy
+          />
         </div>
-        <div className="bg-salon-white p-4 sm:p-6 rounded-lg shadow-md animate-on-scroll">
-          <p className="text-sm sm:text-base text-salon-black italic font-normal">
-            "Najbolja boja koju sam ikada imala! Milica je prava umetnica. Toplo preporučujem!"
-          </p>
-          <p className="text-salon-purple font-medium mt-4 text-sm sm:text-base">
-            Ivana S. ★★★★★
-          </p>
-        </div>
-        <div className="bg-salon-white p-4 sm:p-6 rounded-lg shadow-md animate-on-scroll">
-          <p className="text-sm sm:text-base text-salon-black italic font-normal">
-            "Slavica mi je transformisala izgled za venčanje. Ne mogu biti srećnija!"
-          </p>
-          <p className="text-salon-purple font-medium mt-4 text-sm sm:text-base">
-            Tamara L. ★★★★★
-          </p>
+        <div className="mt-8 animate-on-scroll" data-animate-delay="400">
+          <a
+            href="https://search.google.com/local/writereview?placeid=ChIJTzph2xgQW0cRtdyHXj8V9NQ"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center justify-center bg-salon-purple text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base transition-all duration-300"
+          >
+            <span className="inline-flex items-center justify-center">
+              <svg
+                className="w-0 h-5 opacity-0 group-hover:w-5 group-hover:opacity-100 mr-2 transition-all duration-500"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95.49-7.45-2.41-7.94-6.36-.49-3.95 2.41-7.45 6.36-7.94V8h2v2h2v2h-2v2h-2v-2H6.07c-2.76 2.24-3.47 6.17-1.23 8.93 2.24 2.76 6.17 3.47 8.93 1.23L11 19.93z" />
+              </svg>
+              Ostavi recenziju
+            </span>
+          </a>
         </div>
       </div>
     </section>

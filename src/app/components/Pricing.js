@@ -1,113 +1,139 @@
-// src/app/components/Pricing.js
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+
+// Podaci za cenovnik
+const pricingData = [
+  {
+    title: 'Šišanje i Feniranje',
+    items: [
+      { name: 'Žensko dečije (do 4 godine)', price: '700 RSD' },
+      { name: 'Muško', price: '650 RSD' },
+      { name: 'Žensko', price: '800/1000/1300/— RSD' },
+      { name: 'Feniranje', price: '700/800/1000/1200 RSD' },
+    ],
+  },
+  {
+    title: 'Pramenovi',
+    items: [
+      { name: 'Pramenovi Kapa (bez šišanja i feniranja)', price: '2500/3000/3800/— RSD' },
+      { name: 'Pramenovi 1 Boja (bez šišanja i feniranja)', price: '3200/4000/5000/6000 RSD' },
+      { name: 'Pramenovi 2 Boje (bez šišanja i feniranja)', price: '3600/4600/5600/7000 RSD' },
+      { name: 'Pramenovi 3 Boje (bez šišanja i feniranja)', price: '4000/5000/6200/7200 RSD' },
+    ],
+  },
+  {
+    title: 'Farbanje i Preliv',
+    items: [
+      { name: 'Farbanje Izrastka sa Feniranjem', price: '2500/2800/3000/3700 RSD' },
+      { name: 'Doplata za izrazito dugu/gustu kosu', price: '1200 RSD' },
+      { name: 'Usluga Farbanja', price: '700/—/900/— RSD' },
+      { name: 'Preliv', price: '1400/2000/2400/— RSD' },
+    ],
+  },
+  {
+    title: 'Lokne, Pletenice i Tretmani',
+    items: [
+      { name: 'Lokne sa Kupom (bez pranja)', price: '—/1400/1800/2000 RSD' },
+      { name: 'Pranje i Sušenje Kose - Žensko duga', price: '650 RSD' },
+      { name: 'Pranje i Sušenje Kose - Muško', price: '250 RSD' },
+      { name: 'Gužvanje', price: '750 RSD' },
+      { name: 'Pletenice - Sitne/Krupne', price: '350/450/—/— RSD' },
+      { name: 'Svečane Frizure (bez pranja)', price: '—/2000/2500/3000 RSD' },
+      { name: 'Frizura za mladu - Srednja dužina/Duga kosa', price: '—/3300/3800/— RSD' },
+      { name: 'Rep', price: '2500 RSD' },
+      { name: 'Lokne sa Peglom (bez pranja)', price: '—/1400/1500/2000 RSD' },
+      { name: 'Talasi - Krepovanje', price: '2000 RSD' },
+      { name: 'Talasi', price: '—/1000/1300/1700 RSD' },
+      { name: 'Tretman 1', price: '1100 RSD' },
+      { name: 'Tretman 2', price: '1400 RSD' },
+      { name: 'Tretman (perut)', price: '1000 RSD' },
+      { name: 'Ampula', price: '500 RSD' },
+      { name: 'Pakovanje', price: '500 RSD' },
+      { name: 'Preliv - Toniranje', price: '600 RSD' },
+      { name: 'Peglanje (bez pranja)', price: '1000 RSD' },
+      { name: 'Šiške', price: '200 RSD' },
+      { name: 'Balajaž', price: '—/7500/9000/10000 RSD' },
+      { name: 'Blajhanje (Skidanje Boje)', price: '2300/4500/6500/9000 RSD' },
+      { name: 'Doplata za farbanje', price: '1200 RSD' },
+    ],
+  },
+];
+
+// Komponenta za prikaz jednog reda
+const PriceRow = ({ name, price, isHeader = false }) => (
+  <div className={`flex items-center gap-1 ${isHeader ? 'mb-0.5' : 'mb-0.5'}`}>
+    <span
+      className={isHeader ? 'w-0' : 'flex-none max-w-[55%] xs:max-w-[60%] sm:max-w-[50%] md:max-w-[40%] text-[10px] xs:text-xs sm:text-sm md:text-base whitespace-normal break-words'}
+    >
+      {name}
+    </span>
+    <span className={`flex-1 min-w-[5px] mx-0.5 xs:mx-1 sm:mx-2 md:mx-3 ${isHeader ? '' : 'border-b border-dotted border-white'}`}></span>
+    <span className={`flex-none text-right text-[10px] xs:text-xs sm:text-sm md:text-base`}>
+      {price}
+    </span>
+  </div>
+);
+
+// Komponenta za prikaz sekcije
+const PricingSection = ({ title, items }) => (
+  <div>
+    <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-purple-600 great-vibes text-center">{title}</h3>
+    <div className="text-left">
+      <PriceRow isHeader price="Kratka/Srednja/Duga/Extra duga" />
+      <ul className="space-y-1 sm:space-y-2">
+        {items.map((item, index) => (
+          <li key={index}>
+            <PriceRow name={item.name} price={item.price} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+);
 
 export default function Pricing() {
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
-    hover: {
-      scale: 1.05,
-      boxShadow: '0 0 20px rgba(147, 51, 234, 0.5)',
-      transition: { duration: 0.3 },
-    },
-  };
-
   return (
     <section
       id="pricing"
-      className="py-16 sm:py-24 px-4 sm:px-6 md:px-16 bg-gradient-to-br from-[#2c2c52] via-[#16213e] to-[#0f3460] min-h-screen flex flex-col items-center justify-start relative overflow-hidden scroll-mt-20"
+      className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-16 bg-gradient-to-br from-[#2c2c52] via-[#16213e] to-[#0f3460] min-h-screen flex flex-col items-center justify-start relative overflow-hidden scroll-mt-20"
     >
-      {/* Central faded butterfly in background */}
+      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-8 sm:mb-12 md:mb-16 great-vibes">
+        Cenovnik
+      </h2>
+
+      {/* Pozadinska slika leptira */}
       <Image
         src="/background-images/butterfly_1_white.svg"
-        alt="Butterfly Background"
+        alt="Pozadina leptir"
         fill
         className="absolute inset-0 w-full h-full object-contain opacity-10 pointer-events-none select-none"
+        loading="lazy"
       />
 
-      {/* Decorative corner butterflies (only on md+ screens) */}
-      <div className="hidden md:block absolute top-50 left-50 z-0">
-        <Image
-          src="/background-images/butterfly_1_white.svg"
-          alt="Butterfly Top Left"
-          width={140}
-          height={140}
-          className="opacity-50 rotate-[-15deg] ml-[-40px] mt-[-40px]"
-        />
-      </div>
+      {/* Dekorativni leptiri u uglovima (samo za md+ ekrane) */}
+      {[
+        { position: 'top-50 left-50', opacity: 'opacity-50', rotate: '-rotate-[15deg]', margin: '-ml-5 sm:-ml-10 -mt-5 sm:-mt-10', size: { xs: 80, md: 140 } },
+        { position: 'top-20 right-30', opacity: 'opacity-35', rotate: 'rotate-[25deg]', margin: '-mr-5 sm:-mr-10 -mt-4 sm:-mt-8', size: { xs: 60, md: 120 } },
+        { position: 'bottom-10 left-10', opacity: 'opacity-20', rotate: 'rotate-[45deg]', margin: '-mb-5 sm:-mb-10 -ml-4 sm:-ml-8', size: { xs: 100, md: 160 } },
+        { position: 'bottom-0 right-0', opacity: 'opacity-20', rotate: '-rotate-[30deg]', margin: '-mb-4 sm:-mb-8 -mr-4 sm:-mr-8', size: { xs: 70, md: 130 } },
+      ].map((butterfly, index) => (
+        <div key={index} className={`hidden md:block absolute ${butterfly.position} z-0`}>
+          <Image
+            src="/background-images/butterfly_1_white.svg"
+            alt={`Leptir ${index + 1}`}
+            width={butterfly.size.md}
+            height={butterfly.size.md}
+            className={`${butterfly.opacity} ${butterfly.rotate} ${butterfly.margin}`}
+            loading="lazy"
+          />
+        </div>
+      ))}
 
-      <div className="hidden md:block absolute top-20 right-30 z-0">
-        <Image
-          src="/background-images/butterfly_1_white.svg"
-          alt="Butterfly Top Right"
-          width={120}
-          height={120}
-          className="opacity-35 rotate-[25deg] mr-[-40px] mt-[-30px]"
-        />
-      </div>
-
-      <div className="hidden md:block absolute bottom-10 left-10 z-0">
-        <Image
-          src="/background-images/butterfly_1_white.svg"
-          alt="Butterfly Bottom Left"
-          width={160}
-          height={160}
-          className="opacity-20 rotate-[45deg] mb-[-40px] ml-[-30px]"
-        />
-      </div>
-
-      <div className="hidden md:block absolute bottom-0 right-0 z-0">
-        <Image
-          src="/background-images/butterfly_1_white.svg"
-          alt="Butterfly Bottom Right"
-          width={130}
-          height={130}
-          className="opacity-20 rotate-[-30deg] mb-[-30px] mr-[-30px]"
-        />
-      </div>
-
-      {/* Content wrapper */}
-      <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10">
-          {/* Pricing Card 1 */}
-          <motion.div
-            className="relative w-full max-w-md mx-auto rounded-lg overflow-hidden bg-[#1e1e2f] border border-[#9333ea]/30 shadow-2xl backdrop-blur-sm"
-            variants={cardVariants}
-            initial="hidden"
-            animate="visible"
-            whileHover="hover"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-[#9333ea]/20 to-[#4f46e5]/20 opacity-0 hover:opacity-100 transition-opacity duration-300" />
-
-            <Image
-              src="/price-lists/price_list_1.png"
-              alt="Cenovnik 1"
-              width={400}
-              height={400}
-              className="max-w-sm h-auto object-contain transform hover:scale-105 transition-transform duration-500 mx-auto"
-            />
-          </motion.div>
-
-          {/* Pricing Card 2 */}
-          <motion.div
-            className="relative w-full max-w-md mx-auto rounded-lg overflow-hidden bg-[#1e1e2f] border border-[#9333ea]/30 shadow-2xl backdrop-blur-sm"
-            variants={cardVariants}
-            initial="hidden"
-            animate="visible"
-            whileHover="hover"
-            transition={{ delay: 0.2 }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-[#9333ea]/20 to-[#4f46e5]/20 opacity-0 hover:opacity-100 transition-opacity duration-300" />
-
-            <Image
-              src="/price-lists/price_list_2.png"
-              alt="Cenovnik 2"
-              width={400}
-              height={400}
-              className="max-w-sm h-auto object-contain transform hover:scale-105 transition-transform duration-500 mx-auto"
-            />
-          </motion.div>
+      {/* Sadržaj cenovnika */}
+      <div className="relative z-10 w-full max-w-[90%] sm:max-w-3xl md:max-w-4xl mx-auto text-white">
+        <div className="space-y-6 sm:space-y-8">
+          {pricingData.map((section, index) => (
+            <PricingSection key={index} title={section.title} items={section.items} />
+          ))}
         </div>
       </div>
     </section>
