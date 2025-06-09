@@ -55,12 +55,12 @@ export default function Team() {
         </div>
 
         {/* Grid sa SVG slikama */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-12">
+        <div className="grid grid-cols-3 gap-8 max-w-6xl mx-auto mt-12">
           {/* Dragana Opsenica */}
           <div className={`relative transform transition-all duration-1000 ease-out ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`} style={{ transitionDelay: '400ms' }}>
-            <svg width="220" height="272" className="relative" viewBox="-2 -2 220 272">
+            <svg className="w-full h-auto md:w-[220px] md:h-[272px]" viewBox="-2 -2 220 272">
               <defs>
                 <clipPath id="team-member-clip-dragana">
                   <path d="M 0,68 Q 0,0 68,0 L 216,0 L 216,204 Q 216,268 152,268 L 0,268 L 0,68 Z" />
@@ -80,9 +80,9 @@ export default function Team() {
                 preserveAspectRatio="xMidYMid slice" 
               />
             </svg>
-            <div className="bg-purple-300 text-gray-700 px-4 py-3 -mt-2 text-right ml-16 mr-24" style={{ borderRadius: '0 16px 0 16px' }}>
-              <h3 className="font-medium text-base mb-1">Dragana Opsenica</h3>
-              <p className="font-normal text-sm opacity-80">Osnivačica salona</p>
+            <div className="bg-purple-300 text-gray-700 px-4 py-3 -mt-2 text-right w-2/3 ml-auto md:ml-16 md:mr-24 md:w-auto" style={{ borderRadius: '0 16px 0 16px' }}>
+              <h3 className="font-medium text-sm md:text-base mb-1">Dragana Opsenica</h3>
+              <p className="font-normal text-xs md:text-sm opacity-80">Osnivačica salona</p>
             </div>
           </div>
 
@@ -90,7 +90,7 @@ export default function Team() {
           <div className={`relative transform transition-all duration-1000 ease-out ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`} style={{ transitionDelay: '600ms' }}>
-            <svg width="220" height="272" className="relative" viewBox="-2 -2 220 272">
+            <svg className="w-full h-auto md:w-[220px] md:h-[272px]" viewBox="-2 -2 220 272">
               <defs>
                 <clipPath id="team-member-clip-milica">
                   <path d="M 0,68 Q 0,0 68,0 L 216,0 L 216,204 Q 216,268 152,268 L 0,268 L 0,68 Z" />
@@ -110,9 +110,9 @@ export default function Team() {
                 preserveAspectRatio="xMidYMid slice" 
               />
             </svg>
-            <div className="bg-purple-300 text-gray-700 px-4 py-3 -mt-2 text-right ml-16 mr-24" style={{ borderRadius: '0 16px 0 16px' }}>
-              <h3 className="font-medium text-base mb-1">Milica Jovanović</h3>
-              <p className="font-normal text-sm opacity-80">Frizerski specijalista</p>
+            <div className="bg-purple-300 text-gray-700 px-4 py-3 -mt-2 text-right w-2/3 ml-auto md:ml-16 md:mr-24 md:w-auto" style={{ borderRadius: '0 16px 0 16px' }}>
+              <h3 className="font-medium text-sm md:text-base mb-1">Milica Jovanović</h3>
+              <p className="font-normal text-xs md:text-sm opacity-80">Frizerski specijalista</p>
             </div>
           </div>
 
@@ -120,7 +120,7 @@ export default function Team() {
           <div className={`relative transform transition-all duration-1000 ease-out ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`} style={{ transitionDelay: '800ms' }}>
-            <svg width="220" height="272" className="relative" viewBox="-2 -2 220 272">
+            <svg className="w-full h-auto md:w-[220px] md:h-[272px]" viewBox="-2 -2 220 272">
               <defs>
                 <clipPath id="team-member-clip-slavica">
                   <path d="M 0,68 Q 0,0 68,0 L 216,0 L 216,204 Q 216,268 152,268 L 0,268 L 0,68 Z" />
@@ -140,9 +140,9 @@ export default function Team() {
                 preserveAspectRatio="xMidYMid slice" 
               />
             </svg>
-            <div className="bg-purple-300 text-gray-700 px-4 py-3 -mt-2 text-right ml-16 mr-24" style={{ borderRadius: '0 16px 0 16px' }}>
-              <h3 className="font-medium text-base mb-1">Slavica Bavaričić</h3>
-              <p className="font-normal text-sm opacity-80">Frizerski specijalista</p>
+            <div className="bg-purple-300 text-gray-700 px-4 py-3 -mt-2 text-right w-2/3 ml-auto md:ml-16 md:mr-24 md:w-auto" style={{ borderRadius: '0 16px 0 16px' }}>
+              <h3 className="font-medium text-sm md:text-base mb-1">Slavica Bavaričić</h3>
+              <p className="font-normal text-xs md:text-sm opacity-80">Frizerski specijalista</p>
             </div>
           </div>
         </div>
@@ -157,29 +157,29 @@ export default function Team() {
           />
         </div>
 
-        {/* Leptir dekoracija sa animacijom */}
-        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-10">
-          <Image
-            src="/background-images/butterfly_2.svg"
-            alt="Dekoracija leptir"
-            width={300}
-            height={300}
-            className={`absolute -top-40 right-0 w-48 md:w-[16rem] lg:w-[20rem] transition-all duration-2000 ease-out delay-500 ${
-              isVisible ? 'opacity-30 translate-x-0 rotate-0' : 'opacity-0 translate-x-20 rotate-45'
-            } hover:rotate-12`}
-            aria-hidden="true"
-          />
-          <Image
-            src="/background-images/butterfly_1.svg"
-            alt="Dekoracija leptir"
-            width={200}
-            height={200}
-            className={`absolute top-[320px] right-0 w-32 md:w-[12rem] lg:w-[14rem] transition-all duration-2000 ease-out delay-700 ${
-              isVisible ? 'opacity-30 translate-x-0 rotate-0' : 'opacity-0 translate-x-20 rotate-45'
-            } hover:rotate-12`}
-            aria-hidden="true"
-          />
-        </div>
+{/* Leptir dekoracija sa animacijom */}
+<div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-10">
+  <Image
+    src="/background-images/butterfly_2.svg"
+    alt="Dekoracija leptir"
+    width={300}
+    height={300}
+    className={`absolute -top-25 left-83 right-0 w-48 sm:w-[16rem] md:w-[20rem] transition-all duration-2000 ease-out delay-500 ${
+      isVisible ? 'opacity-30 translate-x-0 rotate-0' : 'opacity-0 translate-x-20 rotate-45'
+    } hover:rotate-12 sm:top-20 sm:right-10 sm:left-auto md:-top-40 md:right-0`} /* Dodato sm:right-10 za pomeranje u desno */
+    aria-hidden="true"
+  />
+  <Image
+    src="/background-images/butterfly_1.svg"
+    alt="Dekoracija leptir"
+    width={200}
+    height={200}
+    className={`absolute top-[150px] right-5 w-32 sm:w-[12rem] md:w-[14rem] transition-all duration-2000 ease-out delay-700 ${
+      isVisible ? 'opacity-30 translate-x-0 rotate-0' : 'opacity-0 translate-x-20 rotate-45'
+    } hover:rotate-12 sm:top-[320px] sm:right-0 md:top-[320px] md:right-0`}
+    aria-hidden="true"
+  />
+</div>
       </div>
     </section>
   );
