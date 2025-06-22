@@ -16,12 +16,24 @@ export default function Team() {
   return (
     <>
       <style jsx>{`
+        .team-member-info {
+          min-height: 80px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-end;
+        }
+        
+        /* Butterfly hover effects */
+        .butterfly-1:hover,
+        .butterfly-2:hover {
+          transform: rotate(12deg) !important;
+          transition: transform 0.3s ease !important;
+        }
+        
         @media (max-width: 900px) {
           .team-member-info {
             min-height: 75px !important;
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: center !important;
           }
           .team-grid {
             gap: 1.5rem !important;
@@ -31,6 +43,7 @@ export default function Team() {
             width: 95% !important;
             height: auto !important;
           }
+
         }
         
         @media (max-width: 850px) {
@@ -44,16 +57,20 @@ export default function Team() {
           .team-member-name {
             font-size: 13px !important;
             line-height: 1.2 !important;
+            white-space: nowrap !important;
           }
           .team-member-title {
             font-size: 11px !important;
             line-height: 1.2 !important;
+            white-space: nowrap !important;
           }
           .team-member-info {
             width: 75% !important;
             margin-left: auto !important;
             margin-right: 1rem !important;
+            align-items: center !important;
           }
+
         }
         
         @media (max-width: 800px) {
@@ -67,24 +84,25 @@ export default function Team() {
           .team-member-name {
             font-size: 12px !important;
             line-height: 1.2 !important;
+            white-space: nowrap !important;
           }
           .team-member-title {
             font-size: 10px !important;
             line-height: 1.2 !important;
+            white-space: nowrap !important;
           }
           .team-member-info {
             width: 70% !important;
             margin-left: auto !important;
             margin-right: 1.5rem !important;
+            align-items: center !important;
           }
+
         }
         
         @media (max-width: 768px) {
           .team-member-info {
             min-height: 70px !important;
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: center !important;
           }
           .team-grid {
             gap: 1rem !important;
@@ -93,14 +111,12 @@ export default function Team() {
           .team-svg {
             width: 90% !important;
           }
+
         }
         
         @media (max-width: 640px) {
           .team-member-info {
             min-height: 65px !important;
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: center !important;
           }
           .team-grid {
             gap: 1rem !important;
@@ -109,16 +125,61 @@ export default function Team() {
           .team-svg {
             width: 100% !important;
           }
+
+        }
+        
+        @media (max-width: 475px) {
+          .team-member-name {
+            font-size: 10px !important;
+            line-height: 1.2 !important;
+            white-space: normal !important;
+            text-align: center !important;
+          }
+          .team-member-title {
+            font-size: 8px !important;
+            line-height: 1.2 !important;
+            white-space: normal !important;
+            text-align: center !important;
+          }
+          .team-member-info {
+            width: 100% !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            align-items: center !important;
+            min-height: 60px !important;
+          }
+
+        }
+        
+        @media (max-width: 400px) {
+          .team-member-name {
+            font-size: 9px !important;
+            line-height: 1.1 !important;
+          }
+          .team-member-title {
+            font-size: 7px !important;
+            line-height: 1.1 !important;
+          }
+          .team-description {
+            font-size: 9px !important;
+          }
+          .team-title {
+            font-size: 3rem !important;
+          }
+          .team-member-info {
+            min-height: 55px !important;
+          }
+
         }
         
         @media (max-width: 320px) {
           .team-member-name {
             font-size: 8px !important;
-            line-height: 1.2 !important;
+            line-height: 1.1 !important;
           }
           .team-member-title {
             font-size: 6px !important;
-            line-height: 1.2 !important;
+            line-height: 1.1 !important;
           }
           .team-description {
             font-size: 8px !important;
@@ -129,6 +190,7 @@ export default function Team() {
           .team-member-info {
             min-height: 50px !important;
           }
+
         }
         
         @media (max-width: 300px) {
@@ -136,16 +198,15 @@ export default function Team() {
             width: 100% !important;
             margin-left: 0 !important;
             margin-right: 0 !important;
-            left: 0 !important;
-            position: relative !important;
+            min-height: 48px !important;
           }
           .team-member-name {
             font-size: 7px !important;
-            line-height: 1.1 !important;
+            line-height: 1 !important;
           }
           .team-member-title {
             font-size: 5px !important;
-            line-height: 1.1 !important;
+            line-height: 1 !important;
           }
           /* Override Tailwind classes */
           .team-member-info.w-full {
@@ -163,46 +224,7 @@ export default function Team() {
           .team-member-info.ml-auto {
             margin-left: 0 !important;
           }
-        }
-        
-        @media (min-width: 321px) and (max-width: 400px) {
-          .team-member-name {
-            font-size: 9px !important;
-            line-height: 1.3 !important;
-          }
-          .team-member-title {
-            font-size: 7px !important;
-            line-height: 1.3 !important;
-          }
-          .team-description {
-            font-size: 9px !important;
-          }
-          .team-title {
-            font-size: 3rem !important;
-          }
-          .team-member-info {
-            min-height: 55px !important;
-          }
-        }
-        
-        @media (min-width: 401px) and (max-width: 475px) {
-          .team-member-name {
-            font-size: 10px !important;
-            line-height: 1.3 !important;
-          }
-          .team-member-title {
-            font-size: 8px !important;
-            line-height: 1.3 !important;
-          }
-          .team-description {
-            font-size: 10px !important;
-          }
-          .team-title {
-            font-size: 3.2rem !important;
-          }
-          .team-member-info {
-            min-height: 60px !important;
-          }
+
         }
         
         @media (min-width: 476px) and (max-width: 640px) {
@@ -222,6 +244,7 @@ export default function Team() {
             min-height: 75px !important;
           }
         }
+
       `}</style>
     <section id="team" className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 text-center bg-gradient-to-b from-[#F7F2FF] from-10% via-gray-100 via-25% via-gray-200 via-40% via-gray-100 via-55% to-white to-90% relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
@@ -366,16 +389,22 @@ export default function Team() {
           />
         </div>
 
-{/* Leptir dekoracija sa animacijom */}
+{/* Leptir dekoracija sa optimizovanim responsive pozicioniranjem */}
 <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-10">
   <Image
     src="/background-images/butterfly_2.svg"
     alt="Dekoracija leptir"
     width={300}
     height={300}
-    className={`absolute -top-25 left-83 right-0 w-32 xs:w-40 sm:w-[16rem] md:w-[20rem] transition-all duration-2000 ease-out delay-500 ${
-      isVisible ? 'opacity-30 translate-x-0 rotate-0' : 'opacity-0 translate-x-20 rotate-45'
-    } hover:rotate-12 sm:top-20 sm:right-10 sm:left-auto md:-top-40 md:right-0`}
+    className={`absolute transition-all duration-2000 ease-out delay-500 ${
+      isVisible ? 'opacity-40 translate-x-0 rotate-0' : 'opacity-0 translate-x-20 rotate-45'
+    } hover:rotate-12 butterfly-1`}
+    style={{
+      top: 'clamp(0px, 2%, 40px)',
+      right: 'clamp(5px, 3%, 50px)',
+      width: 'clamp(50px, 12vw, 200px)',
+      height: 'auto'
+    }}
     aria-hidden="true"
   />
   <Image
@@ -383,9 +412,15 @@ export default function Team() {
     alt="Dekoracija leptir"
     width={200}
     height={200}
-    className={`absolute top-[150px] right-5 w-24 xs:w-28 sm:w-[12rem] md:w-[14rem] transition-all duration-2000 ease-out delay-700 ${
-      isVisible ? 'opacity-30 translate-x-0 rotate-0' : 'opacity-0 translate-x-20 rotate-45'
-    } hover:rotate-12 sm:top-[320px] sm:right-0 md:top-[320px] md:right-0`}
+    className={`absolute transition-all duration-2000 ease-out delay-700 ${
+      isVisible ? 'opacity-40 translate-x-0 rotate-0' : 'opacity-0 translate-x-20 rotate-45'
+    } hover:rotate-12 butterfly-2`}
+    style={{
+      top: 'clamp(200px, 65%, 400px)',
+      right: 'clamp(2px, 1%, 20px)',
+      width: 'clamp(35px, 9vw, 160px)',
+      height: 'auto'
+    }}
     aria-hidden="true"
   />
 </div>
