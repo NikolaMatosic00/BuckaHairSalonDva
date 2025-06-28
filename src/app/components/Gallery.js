@@ -65,7 +65,7 @@ export default function Gallery() {
 
         {/* Drugi red */}
         <div className="gallery-row">
-          <div className="gallery-item" style={{ '--item-basis': '33.4%' }}>
+          <div className="gallery-item" style={{ '--item-basis': '33.63%' }}>
             <Image
               src="/haircuts/haircut07.jpg"
               alt="Frizura 7"
@@ -75,7 +75,7 @@ export default function Gallery() {
               className="block"
             />
           </div>
-          <div className="gallery-item" style={{ '--item-basis': '23.91%' }}>
+          <div className="gallery-item" style={{ '--item-basis': '24.08%' }}>
             <Image
               src="/haircuts/haircut131.jpg"
               alt="Frizura 131"
@@ -85,7 +85,7 @@ export default function Gallery() {
               className="block"
             />
           </div>
-          <div className="gallery-item" style={{ '--item-basis': '23.86%' }}>
+          <div className="gallery-item" style={{ '--item-basis': '24.03%' }}>
             <Image
               src="/haircuts/haircut05.jpg"
               alt="Frizura 5"
@@ -99,7 +99,7 @@ export default function Gallery() {
 
         {/* Treći red */}
         <div className="gallery-row last-row">
-          <div className="gallery-item" style={{ '--item-basis': '43.203%' }}>
+          <div className="gallery-item" style={{ '--item-basis': '43.26%' }}>
             <Image
               src="/haircuts/haircut02.jpg"
               alt="Frizura 2"
@@ -109,7 +109,7 @@ export default function Gallery() {
               className="block"
             />
           </div>
-          <div className="gallery-item" style={{ '--item-basis': '38.70%' }}>
+          <div className="gallery-item" style={{ '--item-basis': '38.71%' }}>
             <Image
               src="/haircuts/haircut08.jpg"
               alt="Frizura 8"
@@ -134,8 +134,16 @@ export default function Gallery() {
           display: flex;
           gap: 5px; /* Identican razmak između slika za sve redove */
           flex-wrap: nowrap;
-          justify-content: flex-end;
+          justify-content: center; /* Centriranje sadržaja na desktopu */
         }
+        
+        /* Specifičan gap za prvi red na desktop verziji */
+        @media (min-width: 1281px) {
+          .first-row {
+            gap: 2px !important; /* Manji razmak za prvi red da vizuelno izgleda usklađeno */
+          }
+        }
+        
         .gallery-row + .gallery-row {
           margin-top: 5px; /* Razmak između redova na desktopu */
         }
@@ -171,18 +179,18 @@ export default function Gallery() {
           right: 0;
           height: 15%;
           pointer-events: none;
-          backdrop-filter: blur(1.8px); /* Smanjeno sa 2px na 1.8px */
+          backdrop-filter: blur(1.8px);
           -webkit-backdrop-filter: blur(1.8px);
         }
 
         .first-row .gallery-item::before {
           top: 0;
-          background: linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0%, transparent 100%); /* Smanjeno sa 0.5 na 0.45 */
+          background: linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0%, transparent 100%);
         }
 
         .last-row .gallery-item::after {
           bottom: 0;
-          background: linear-gradient(to top, rgba(255, 255, 255, 0.45) 0%, transparent 100%); /* Smanjeno sa 0.5 na 0.45 */
+          background: linear-gradient(to top, rgba(255, 255, 255, 0.45) 0%, transparent 100%);
         }
 
         /* Responsivnost za tablete (1280px do 481px) */
@@ -196,7 +204,7 @@ export default function Gallery() {
             gap: calc(5px * 1.15);
             transform: none;
             justify-content: center;
- vérification-wrap: nowrap;
+            flex-wrap: nowrap;
           }
           .gallery-row + .gallery-row {
             margin-top: calc(5px * 1.15);
