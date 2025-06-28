@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 
@@ -21,7 +21,7 @@ export default function Gallery() {
       },
       {
         threshold: 0.2,
-        rootMargin: '50px'
+        rootMargin: '50px',
       }
     );
 
@@ -39,9 +39,9 @@ export default function Gallery() {
   return (
     <section id="gallery" className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 bg-salon-white overflow-hidden" ref={galleryRef}>
       <div className="gallery-wrapper">
-        {/* Prvi red sa blur efektom na vrhu */}
+        {/* Prvi red */}
         <div className="gallery-row first-row">
-          <div className="gallery-item" style={{ flexBasis: '41.35%' }}>
+          <div className="gallery-item" style={{ '--item-basis': '41.35%' }}>
             <Image
               src="/haircuts/haircut161.jpg"
               alt="Frizura 121"
@@ -51,7 +51,7 @@ export default function Gallery() {
               className="block"
             />
           </div>
-          <div className="gallery-item" style={{ flexBasis: '41.05%' }}>
+          <div className="gallery-item" style={{ '--item-basis': '41.05%' }}>
             <Image
               src="/haircuts/haircut04.jpg"
               alt="Frizura 4"
@@ -62,10 +62,10 @@ export default function Gallery() {
             />
           </div>
         </div>
-        
-        {/* Drugi red (tri slike, bez blur-a) */}
+
+        {/* Drugi red */}
         <div className="gallery-row">
-          <div className="gallery-item" style={{ flexBasis: '33.4%' }}>
+          <div className="gallery-item" style={{ '--item-basis': '33.4%' }}>
             <Image
               src="/haircuts/haircut07.jpg"
               alt="Frizura 7"
@@ -75,7 +75,7 @@ export default function Gallery() {
               className="block"
             />
           </div>
-          <div className="gallery-item" style={{ flexBasis: '23.91%' }}>
+          <div className="gallery-item" style={{ '--item-basis': '23.91%' }}>
             <Image
               src="/haircuts/haircut131.jpg"
               alt="Frizura 131"
@@ -85,7 +85,7 @@ export default function Gallery() {
               className="block"
             />
           </div>
-          <div className="gallery-item" style={{ flexBasis: '23.86%' }}>
+          <div className="gallery-item" style={{ '--item-basis': '23.86%' }}>
             <Image
               src="/haircuts/haircut05.jpg"
               alt="Frizura 5"
@@ -96,10 +96,10 @@ export default function Gallery() {
             />
           </div>
         </div>
-        
-        {/* Treći red sa blur efektom na dnu */}
+
+        {/* Treći red */}
         <div className="gallery-row last-row">
-          <div className="gallery-item" style={{ flexBasis: '43.203%' }}>
+          <div className="gallery-item" style={{ '--item-basis': '43.203%' }}>
             <Image
               src="/haircuts/haircut02.jpg"
               alt="Frizura 2"
@@ -109,7 +109,7 @@ export default function Gallery() {
               className="block"
             />
           </div>
-          <div className="gallery-item" style={{ flexBasis: '38.70%' }}>
+          <div className="gallery-item" style={{ '--item-basis': '38.70%' }}>
             <Image
               src="/haircuts/haircut08.jpg"
               alt="Frizura 8"
@@ -128,35 +128,40 @@ export default function Gallery() {
           width: 100%;
           max-width: 1281px;
           margin: 0 auto;
+          box-sizing: border-box;
         }
         .gallery-row {
           display: flex;
-          gap: 10px;
+          gap: 5px; /* Identican razmak između slika za sve redove */
           flex-wrap: nowrap;
           justify-content: flex-end;
-          transform: translateX(-105px);
         }
         .gallery-row + .gallery-row {
-          margin-top: 10px;
+          margin-top: 5px; /* Razmak između redova na desktopu */
         }
-        
-        /* Manji razmak samo za prvi red */
-        .gallery-row:first-child {
-          gap: 5px;
-        }
-        
+
         .gallery-item {
           flex: 0 0 auto;
           opacity: 0;
           transform: translateY(20px);
           transition: opacity 0.6s ease-out, transform 0.6s ease-out;
           position: relative;
+          flex-basis: var(--item-basis);
+          max-width: 100%;
         }
         .gallery-item.animate-in {
           opacity: 1;
           transform: translateY(0);
         }
-        
+
+        /* Osiguravanje da slike zadrže proporcije */
+        .gallery-item img {
+          object-fit: contain;
+          width: 100%;
+          height: auto;
+          max-width: 100%;
+        }
+
         /* Blur efekti - samo za prvi i poslednji red */
         .first-row .gallery-item::before,
         .last-row .gallery-item::after {
@@ -166,98 +171,63 @@ export default function Gallery() {
           right: 0;
           height: 15%;
           pointer-events: none;
-          backdrop-filter: blur(1.5px);
-          -webkit-backdrop-filter: blur(1.5px);
+          backdrop-filter: blur(1.8px); /* Smanjeno sa 2px na 1.8px */
+          -webkit-backdrop-filter: blur(1.8px);
         }
-        
+
         .first-row .gallery-item::before {
           top: 0;
-          background: linear-gradient(to bottom, 
-            rgba(255,255,255,0.4) 0%, 
-            transparent 100%);
+          background: linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0%, transparent 100%); /* Smanjeno sa 0.5 na 0.45 */
         }
-        
+
         .last-row .gallery-item::after {
           bottom: 0;
-          background: linear-gradient(to top, 
-            rgba(255,255,255,0.4) 0%, 
-            transparent 100%);
+          background: linear-gradient(to top, rgba(255, 255, 255, 0.45) 0%, transparent 100%); /* Smanjeno sa 0.5 na 0.45 */
         }
-        
-        @media (max-width: 1281px) {
-          .gallery-row {
-            gap: calc(10px * (100vw / 1281));
-            transform: translateX(calc(-105px * (100vw / 1281)));
-          }
-          
-          /* Proporcionalno skaliranje manjeg razmaka za prvi red */
-          .gallery-row:first-child {
-            gap: calc(5px * (100vw / 1281));
-          }
-          
-          .gallery-row + .gallery-row {
-            margin-top: calc(10px * (100vw / 1281));
-          }
-          .gallery-item {
-            flex-basis: calc(var(--item-basis) * (100vw / 1281)) !important;
-          }
-        }
-        
-        /* Mobilna verzija - zadržava iste proporcije */
-        @media (max-width: 768px) {
-          .gallery-row {
-            gap: calc(10px * 0.6);
-            transform: translateX(calc(-105px * 0.6 + 100px)); /* Povećano na +100px */
-          }
-          
-          .gallery-row:first-child {
-            gap: calc(5px * 0.6);
-          }
-          
-          .gallery-row + .gallery-row {
-            margin-top: 10px;
-          }
-          
-          .gallery-item {
-            flex-basis: calc(var(--item-basis) * 0.6) !important;
-          }
-          
+
+        /* Responsivnost za tablete (1280px do 481px) */
+        @media (max-width: 1280px) and (min-width: 481px) {
           .gallery-wrapper {
-            max-width: calc(1281px * 0.6);
+            max-width: calc(1281px * 1.15);
+            width: 100%;
+            box-sizing: border-box;
+          }
+          .gallery-row {
+            gap: calc(5px * 1.15);
+            transform: none;
+            justify-content: center;
+ vérification-wrap: nowrap;
+          }
+          .gallery-row + .gallery-row {
+            margin-top: calc(5px * 1.15);
+          }
+          .gallery-item {
+            flex-basis: calc(var(--item-basis) * 1.15) !important;
+            max-width: 100%;
           }
         }
-        
+
+        /* Mobilna verzija (480px i manje) */
         @media (max-width: 480px) {
-          .gallery-row {
-            gap: calc(10px * 0.4);
-            transform: translateX(calc(-105px * 0.4 + 70px)); /* Povećano na +70px */
-          }
-          
-          .gallery-row:first-child {
-            gap: calc(5px * 0.4);
-          }
-          
-          .gallery-row + .gallery-row {
-            margin-top: 10px;
-          }
-          
-          .gallery-item {
-            flex-basis: calc(var(--item-basis) * 0.4) !important;
-          }
-          
           .gallery-wrapper {
-            max-width: calc(1281px * 0.4);
+            max-width: calc(1281px * 1.15);
+            width: 100%;
+            box-sizing: border-box;
+          }
+          .gallery-row {
+            gap: calc(5px * 1.15);
+            transform: none;
+            justify-content: center;
+            flex-wrap: nowrap;
+          }
+          .gallery-row + .gallery-row {
+            margin-top: calc(5px * 1.15);
+          }
+          .gallery-item {
+            flex-basis: calc(var(--item-basis) * 1.15) !important;
+            max-width: 100%;
           }
         }
-        
-        /* Inline stilovi za desktop - prilagođene vrednosti */
-        .gallery-row:nth-child(1) .gallery-item:nth-child(1) { --item-basis: 456px; }
-        .gallery-row:nth-child(1) .gallery-item:nth-child(2) { --item-basis: 410px; }
-        .gallery-row:nth-child(2) .gallery-item:nth-child(1) { --item-basis: 492px; }
-        .gallery-row:nth-child(2) .gallery-item:nth-child(2) { --item-basis: 353px; }
-        .gallery-row:nth-child(2) .gallery-item:nth-child(3) { --item-basis: 352px; }
-        .gallery-row:nth-child(3) .gallery-item:nth-child(1) { --item-basis: 752px; }
-        .gallery-row:nth-child(3) .gallery-item:nth-child(2) { --item-basis: 570px; }
       `}</style>
     </section>
   );
