@@ -64,7 +64,7 @@ export default function Gallery() {
         </div>
 
         {/* Drugi red */}
-        <div className="gallery-row">
+        <div className="gallery-row middle-row">
           <div className="gallery-item" style={{ '--item-basis': '33.63%' }}>
             <Image
               src="/haircuts/haircut07.jpg"
@@ -234,6 +234,14 @@ export default function Gallery() {
           .gallery-item {
             flex-basis: calc(var(--item-basis) * 1.15) !important;
             max-width: 100%;
+          }
+          /* Specifično za srednji red */
+          .middle-row .gallery-item {
+            flex-basis: calc(var(--item-basis) * 1.13) !important; /* Blago smanjenje na 1.12 umesto 1.15 */
+          }
+          .middle-row .gallery-item img {
+            width: calc(100% * 0.97); /* Smanjenje širine slika za oko 3% radi fino podešavanja */
+            height: auto; /* Očuvanje proporcija */
           }
         }
       `}</style>
