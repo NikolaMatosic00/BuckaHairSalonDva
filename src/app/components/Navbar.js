@@ -26,7 +26,7 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop Sidebar */}
-      <nav className="hidden md:flex fixed top-0 left-0 h-full w-16 bg-black z-50 flex-col items-center py-6 transition-all duration-300 ease-in-out hover:w-64 group shadow-md">
+      <nav className="hidden md:flex fixed top-0 left-0 h-full w-16 bg-black z-[1000] flex-col items-center py-6 transition-all duration-300 ease-in-out hover:w-64 group shadow-lg sidebar">
         <div className="mb-8">
           <Link href="#hero">
             <Image

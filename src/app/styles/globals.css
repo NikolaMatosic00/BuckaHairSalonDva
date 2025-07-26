@@ -106,7 +106,6 @@ a {
   /* transform: scale(1.05); */
   background-color: transparent;
   color: black;
-  border: 1px solid black;
 }
 
 /* Wobble efekat za ikonice */
@@ -136,3 +135,10 @@ a {
   animation: colorFlow 4s ease-in-out infinite;
 }
 
+.sidebar {
+  background-color: #000000; /* Eksplicitno crna pozadina */
+  transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+.sidebar:hover {
+  background-color: #ffffff; /* Osiguraj crnu pozadinu pri hover-u */
+}
