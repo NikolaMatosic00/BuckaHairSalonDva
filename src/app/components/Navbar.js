@@ -46,7 +46,7 @@ export default function Navbar() {
           </Link>
           {/* Tekst ">>" vidljiv samo kada nije hoverovano */}
 <span
-  className="absolute -right-9 top-1/2 transform -translate-y-1/2 text-black text-lg font-bold arrow animate-pulse"
+  className="absolute -right-9 top-1/2 transform -translate-y-1/2 text-black text-lg font-bold arrow"
   aria-hidden="true"
 >
   &gt;&gt;
