@@ -1,7 +1,7 @@
 // src/app/components/Instagram.js
 export default function Instagram() {
   return (
-    <section id="instagram" className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 bg-salon-white">
+    <section id="instagram" className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 pt-20 md:pt-4 bg-salon-white">
       <h2 className="text-3xl sm:text-4xl font-bold text-salon-purple text-center mb-8 animate-on-scroll">
         Pratite nas na Instagramu
       </h2>

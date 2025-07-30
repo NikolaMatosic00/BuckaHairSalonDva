@@ -18,7 +18,7 @@ export default function Products() {
         <section
       id="pricing">
       {/* Crna traka sa logovima */}
-      <div className={`bg-black py-2 w-full transition-all duration-1000 ease-out ${
+      <div className={`bg-black py-2 pt-20 md:pt-4 w-full  transition-all duration-1000 ease-out ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}>
         <div className="max-w-7xl mx-auto px-4">

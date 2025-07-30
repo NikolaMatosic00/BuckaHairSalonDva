@@ -14,7 +14,7 @@ export default function Team() {
   }, []);
 
   return (
-    <section id="team" className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 text-center bg-gradient-to-b from-[#F7F2FF] to-white relative overflow-hidden">
+    <section id="team" className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 pt-20 md:pt-4 text-center bg-gradient-to-b from-[#F7F2FF] to-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Naslov sa animacijom */}
         <h2 className={`text-5xl sm:text-7xl md:text-8xl text-salon-black mb-8 great-vibes transition-all duration-1000 ease-out ${
