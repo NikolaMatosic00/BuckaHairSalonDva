@@ -11,7 +11,7 @@ export default function Navbar() {
     { href: '#about', label: 'O nama' },
     { href: '#team', label: 'Tim' },
     { href: '#gallery', label: 'Galerija' },
-    { href: '#products', label: 'Proizvodi' },
+    // { href: '#products', label: 'Proizvodi' },
     { href: '#pricing', label: 'Cenovnik' },
     { href: '#reviews', label: 'Recenzije' },
     // { href: '#instagram', label: 'Instagram' },

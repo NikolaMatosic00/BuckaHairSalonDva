@@ -15,7 +15,8 @@ export default function Products() {
   }, []);
 
   return (
-    <>
+        <section
+      id="pricing">
       {/* Crna traka sa logovima */}
       <div className={`bg-black py-2 w-full transition-all duration-1000 ease-out ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -54,6 +55,6 @@ export default function Products() {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 }
