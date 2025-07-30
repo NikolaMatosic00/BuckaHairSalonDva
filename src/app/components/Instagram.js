@@ -7,7 +7,7 @@ export default function Instagram() {
       </h2>
       <div className="text-center">
         <a
-          href="https://instagram.com/salonlepotabucka"
+          href="https://instagram.com/salon_lepote_bucka"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-salon-purple text-salon-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium text-sm sm:text-base transition-all hover:scale-105 hover:shadow-lg animate-on-scroll"
