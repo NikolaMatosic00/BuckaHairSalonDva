@@ -8,7 +8,7 @@ export default function Reviews() {
     > 
       <div className="max-w-7xl mx-auto relative">
         <h2
-          className="text-5xl sm:text-7xl text-salon-black mb-12 animate-on-scroll great-vibes"
+          className="text-5xl sm:text-7xl text-salon-black mb-12 mt-4 animate-on-scroll great-vibes"
           data-animate-type="heading"
         >
           Recenzije klijenata
@@ -28,7 +28,7 @@ export default function Reviews() {
             href="https://search.google.com/local/writereview?placeid=ChIJTzph2xgQW0cRtdyHXj8V9NQ"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center justify-center bg-salon-purple text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base transition-all duration-300"
+            className="group button-bordered inline-flex items-center justify-center bg-salon-purple text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base transition-all duration-300"
           >
             <span className="inline-flex items-center justify-center">
               <svg

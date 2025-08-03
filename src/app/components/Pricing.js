@@ -76,7 +76,7 @@ const PriceRow = ({ name, price, isHeader = false }) => (
 // Komponenta za prikaz sekcije
 const PricingSection = ({ title, items }) => (
   <div>
-    <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-purple-600 great-vibes text-center">{title}</h3>
+    <h3 className="text-xl sm:text-2xl md:text-3xl mb-4 text-purple-600 great-vibes text-center">{title}</h3>
     <div className="text-left">
       <PriceRow isHeader price="Kratka/Srednja/Duga/Extra duga" />
       <ul className="space-y-1 sm:space-y-2">

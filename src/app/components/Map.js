@@ -53,8 +53,8 @@ export default function Map() {
           href="https://maps.google.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="block text-center bg-salon-purple text-salon-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium text-sm sm:text-base transition-all hover:scale-105 hover:shadow-lg max-w-xs mx-auto mt-4 animate-on-scroll"
-        >
+          className="group button-bordered inline-flex items-center justify-center bg-salon-black text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base transition-all"
+            >
           Otvori u Google Maps
         </a>
         </motion.div>
