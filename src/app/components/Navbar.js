@@ -11,10 +11,10 @@ export default function Navbar() {
     { href: '#about', label: 'O nama' },
     { href: '#team', label: 'Tim' },
     { href: '#gallery', label: 'Galerija' },
-    { href: '#products', label: 'Proizvodi' },
+    // { href: '#products', label: 'Proizvodi' },
     { href: '#pricing', label: 'Cenovnik' },
     { href: '#reviews', label: 'Recenzije' },
-    { href: '#instagram', label: 'Instagram' },
+    // { href: '#instagram', label: 'Instagram' },
     { href: '#contact', label: 'Kontakt' },
     { href: '#map', label: 'Mapa' },
   ];
@@ -26,21 +26,36 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop Sidebar */}
-      <nav className="hidden md:flex fixed top-0 left-0 h-full w-16 bg-black z-50 flex-col items-center py-6 transition-all duration-300 ease-in-out hover:w-64 group shadow-md">
-        <div className="mb-8">
+      <nav className="hidden md:flex fixed top-0 left-0 h-full w-16 bg-black z-[1000] flex-col items-center py-6 transition-all duration-300 ease-in-out hover:w-64 hover:bg-white group shadow-lg sidebar">
+        <div className="mb-8 relative">
           <Link href="#hero">
             <Image
-              src="/logo/logo192x192.png"
+              src="/logo/logo192x192white.png" // Bela logo kada je collapsed
               alt="Salon Lepote Bucka"
               width={40}
               height={40}
+              className="group-hover:hidden" // Sakrij belu logo kada je hoverovano
+            />
+            <Image
+              src="/logo/logo192x192.png" // Crna logo kada je otvoreno
+              alt="Salon Lepote Bucka"
+              width={40}
+              height={40}
+              className="hidden group-hover:block" // Prikazuj crnu logo samo kada je hoverovano
             />
           </Link>
+          {/* Tekst ">>" vidljiv samo kada nije hoverovano */}
+<span
+  className="absolute -right-9 top-1/2 transform -translate-y-1/2 text-black text-lg font-bold arrow"
+  aria-hidden="true"
+>
+  &gt;&gt;
+</span>
         </div>
-        <ul className="flex flex-col space-y-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <ul className="flex flex-col space-y-4 text-white group-hover:text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           {navLinks.map((link) => (
             <li key={link.href} className="px-4">
-              <Link href={link.href} className="text-white hover:text-gray-300 text-lg">
+              <Link href={link.href} className="text-white group-hover:text-black hover:text-gray-300 group-hover:hover:text-gray-600 text-lg">
                 {link.label}
               </Link>
             </li>
@@ -49,7 +64,7 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Hamburger Button */}
-      <div className="md:hidden fixed top-0 left-0 w-full bg-black z-50 flex items-center justify-between px-4 py-3">
+      <div className="md:hidden fixed top-0 left-0 w-full bg-black z-[1000] flex items-center justify-between px-4 py-3">
         <Link href="#hero">
           <Image
             src="/logo/logo192x192white.png"
@@ -91,7 +106,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed top-0 left-0 w-full h-full bg-black z-40 flex flex-col items-center justify-center transition-transform duration-300 ease-in-out ${
+        className={`md:hidden fixed top-0 left-0 w-full h-full bg-black z-[900] flex flex-col items-center justify-center transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >

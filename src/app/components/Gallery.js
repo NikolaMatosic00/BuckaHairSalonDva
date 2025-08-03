@@ -37,7 +37,9 @@ export default function Gallery() {
   }, []);
 
   return (
-    <section id="gallery" className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 bg-salon-white overflow-hidden" ref={galleryRef}>
+
+    <section id="gallery" className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 pt-20 md:pt-4 bg-salon-white overflow-hidden" ref={galleryRef}>
+
       <div className="gallery-wrapper">
         {/* Prvi red */}
         <div className="gallery-row first-row">

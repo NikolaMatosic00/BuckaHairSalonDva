@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative h-screen flex flex-col items-center justify-center bg-gradient-to-b from-white to-[#f9fafc]"
+      className="relative h-screen flex flex-col items-center pt-20 md:pt-4 justify-center bg-gradient-to-b from-white to-[#f9fafc]"
     >
       {/* SVG Backgrounds */}
       <div className="absolute inset-0 w-full h-full opacity-10 overflow-hidden">
@@ -44,7 +44,7 @@ export default function Hero() {
         </p>
         <Link
           href="#pricing"
-          className="group inline-flex items-center justify-center bg-[#09001e] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base transition-all"
+          className="group button-bordered inline-flex items-center justify-center bg-[#09001e] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base transition-all"
         >
           <span className="inline-flex items-center justify-center">
             <ScissorsIcon
