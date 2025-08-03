@@ -80,7 +80,7 @@ export default function Home() {
         <Products />
         <Pricing />
         <Reviews />
-        <Instagram />
+        {/* <Instagram /> */}
         <Contact />
         <Map />
         <Footer />

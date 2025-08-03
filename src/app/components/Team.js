@@ -14,15 +14,25 @@ export default function Team() {
   }, []);
 
   return (
-    <>
-      <style jsx>{`
-        .team-member-info {
-          min-height: 80px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-end;
-        }
+  <>
+    <style jsx>{`
+      .team-member-info {
+        min-height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+      }
+    `}</style>
+
+    <section id="team" className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 pt-20 md:pt-4 text-center bg-gradient-to-b from-[#F7F2FF] to-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Naslov sa animacijom */}
+        <h2 className={`text-5xl sm:text-7xl md:text-8xl text-salon-black mb-8 great-vibes transition-all duration-1000 ease-out ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+        }`}>
+          Naš tim
+        </h2>
         
         /* Butterfly hover effects */
         .butterfly-1:hover,

@@ -106,7 +106,10 @@ a {
   /* transform: scale(1.05); */
   background-color: transparent;
   color: black;
-  border: 1px solid black;
+}
+
+.button-bordered {
+    border: 1px solid black;
 }
 
 /* Wobble efekat za ikonice */
@@ -136,3 +139,38 @@ a {
   animation: colorFlow 4s ease-in-out infinite;
 }
 
+.sidebar {
+  background-color: #000000;
+  transform: translateZ(0);
+  transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+.sidebar:hover {
+  background-color: #ffffff;
+}
+.animate-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+.arrow {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar:not(:hover) .arrow {
+  opacity: 0.7;
+  transition-delay: 0.7s;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.sidebar:hover .arrow {
+  opacity: 0;
+  transition-delay: 0s;
+}

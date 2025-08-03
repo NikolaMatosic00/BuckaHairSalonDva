@@ -14,10 +14,10 @@ const pricingData = [
   {
     title: 'Pramenovi',
     items: [
-      { name: 'Pramenovi Kapa (bez šišanja i feniranja)', price: '2500/3000/3800/— RSD' },
-      { name: 'Pramenovi 1 Boja (bez šišanja i feniranja)', price: '3200/4000/5000/6000 RSD' },
-      { name: 'Pramenovi 2 Boje (bez šišanja i feniranja)', price: '3600/4600/5600/7000 RSD' },
-      { name: 'Pramenovi 3 Boje (bez šišanja i feniranja)', price: '4000/5000/6200/7200 RSD' },
+      { name: 'Pramenovi Kapa', price: '2500/3000/3800/— RSD' },
+      { name: 'Pramenovi 1 Boja', price: '3200/4000/5000/6000 RSD' },
+      { name: 'Pramenovi 2 Boje', price: '3600/4600/5600/7000 RSD' },
+      { name: 'Pramenovi 3 Boje', price: '4000/5000/6200/7200 RSD' },
     ],
   },
   {
@@ -38,7 +38,7 @@ const pricingData = [
       { name: 'Gužvanje', price: '750 RSD' },
       { name: 'Pletenice - Sitne/Krupne', price: '350/450/—/— RSD' },
       { name: 'Svečane Frizure (bez pranja)', price: '—/2000/2500/3000 RSD' },
-      { name: 'Frizura za mladu - Srednja dužina/Duga kosa', price: '—/3300/3800/— RSD' },
+      { name: 'Frizura za mladu', price: '—/3300/3800/— RSD' },
       { name: 'Rep', price: '2500 RSD' },
       { name: 'Lokne sa Peglom (bez pranja)', price: '—/1400/1500/2000 RSD' },
       { name: 'Talasi - Krepovanje', price: '2000 RSD' },
