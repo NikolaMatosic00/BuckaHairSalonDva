@@ -15,7 +15,7 @@ html {
 
 @theme {
   --color-salon-purple: #4c3f75;
-    --color-salon-purpledark: #09001e;
+  --color-salon-purpledark: #09001e;
   --color-salon-light: #f1ebfc;
   --color-salon-light-purple: #dcc9ff;
   --color-salon-black: #000000;
@@ -141,7 +141,7 @@ a {
 }
 
 .sidebar {
-  background-color: #000000;
+  background-color: #09001e;
   transform: translateZ(0);
   transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }

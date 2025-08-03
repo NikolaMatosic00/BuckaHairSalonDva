@@ -35,9 +35,9 @@ export default function Contact() {
           >
             <a
               href="tel:+381691168623"
-              className="wobble-icon flex items-center gap-3 text-base xs:text-lg sm:text-xl md:text-2xl text-salon-black font-medium hover:text-salon-dark-purple hover:scale-105 transition-all duration-300"
+              className="wobble-icon flex items-center gap-3 text-base xs:text-lg sm:text-xl md:text-2xl text-salon-purpledark font-medium hover:text-salon-dark-purple hover:scale-105 transition-all duration-300"
             >
-              <FaPhone className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 text-salon-black" aria-hidden="true" />
+              <FaPhone className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 text-salon-purpledark" aria-hidden="true" />
               +381 69 116 8623
             </a>
           </motion.div>
@@ -56,7 +56,7 @@ export default function Contact() {
               href="mailto:info@salonlepotabucka.com"
               className="wobble-icon flex items-center gap-3 text-base xs:text-lg sm:text-xl md:text-2xl text-salon-purpledark font-medium hover:text-salon-dark-purple hover:scale-105 transition-all duration-300"
             >
-              <FaEnvelope className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 text-salon-black" aria-hidden="true" />
+              <FaEnvelope className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 text-salon-purpledark" aria-hidden="true" />
               info@salonlepotabucka.com
             </a>
           </motion.div>
