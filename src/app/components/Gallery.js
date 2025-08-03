@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 
@@ -12,17 +12,16 @@ export default function Gallery() {
           if (entry.isIntersecting) {
             const items = entry.target.querySelectorAll('.gallery-item');
             items.forEach((item, index) => {
-              // Postepeno pojavljivanje sa zakašnjenjem na osnovu indeksa
               item.classList.add('animate-in');
-              item.style.animationDelay = `${index * 0.15}s`; // 150ms zakašnjenje za svaku sliku
+              item.style.animationDelay = `${index * 0.15}s`;
             });
-            observer.unobserve(entry.target); // Prestani posmatrati nakon prve animacije
+            observer.unobserve(entry.target);
           }
         });
       },
       {
-        threshold: 0.2, // Pokreće se kada je 20% sekcije vidljivo
-        rootMargin: '50px' // Dodatni prostor za ranije pokretanje
+        threshold: 0.2,
+        rootMargin: '50px',
       }
     );
 
@@ -38,11 +37,37 @@ export default function Gallery() {
   }, []);
 
   return (
-    <section id="gallery" className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 pt-20 md:pt-4 bg-salon-white" ref={galleryRef}>
+
+    <section id="gallery" className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 pt-20 md:pt-4 bg-salon-white overflow-hidden" ref={galleryRef}>
+
       <div className="gallery-wrapper">
         {/* Prvi red */}
-        <div className="gallery-row">
-          <div className="gallery-item" style={{ flexBasis: '38.25%' }}>
+        <div className="gallery-row first-row">
+          <div className="gallery-item" style={{ '--item-basis': '41.35%' }}>
+            <Image
+              src="/haircuts/haircut161.jpg"
+              alt="Frizura 121"
+              layout="responsive"
+              width={595}
+              height={152}
+              className="block"
+            />
+          </div>
+          <div className="gallery-item" style={{ '--item-basis': '41.05%' }}>
+            <Image
+              src="/haircuts/haircut04.jpg"
+              alt="Frizura 4"
+              layout="responsive"
+              width={591}
+              height={144}
+              className="block"
+            />
+          </div>
+        </div>
+
+        {/* Drugi red */}
+        <div className="gallery-row middle-row">
+          <div className="gallery-item" style={{ '--item-basis': '33.63%' }}>
             <Image
               src="/haircuts/haircut07.jpg"
               alt="Frizura 7"
@@ -52,7 +77,7 @@ export default function Gallery() {
               className="block"
             />
           </div>
-          <div className="gallery-item" style={{ flexBasis: '27.4%' }}>
+          <div className="gallery-item" style={{ '--item-basis': '24.08%' }}>
             <Image
               src="/haircuts/haircut131.jpg"
               alt="Frizura 131"
@@ -62,7 +87,7 @@ export default function Gallery() {
               className="block"
             />
           </div>
-          <div className="gallery-item" style={{ flexBasis: '27.4%' }}>
+          <div className="gallery-item" style={{ '--item-basis': '24.03%' }}>
             <Image
               src="/haircuts/haircut05.jpg"
               alt="Frizura 5"
@@ -73,97 +98,154 @@ export default function Gallery() {
             />
           </div>
         </div>
-        
-        {/* Drugi red */}
-        <div className="gallery-row">
-          <div className="gallery-item" style={{ flexBasis: '25%' }}>
+
+        {/* Treći red */}
+        <div className="gallery-row last-row">
+          <div className="gallery-item" style={{ '--item-basis': '43.26%' }}>
             <Image
               src="/haircuts/haircut02.jpg"
               alt="Frizura 2"
               layout="responsive"
-              width={320}
-              height={112}
+              width={752}
+              height={263}
               className="block"
             />
           </div>
-          <div className="gallery-item" style={{ flexBasis: '22.3%' }}>
+          <div className="gallery-item" style={{ '--item-basis': '38.71%' }}>
             <Image
               src="/haircuts/haircut08.jpg"
               alt="Frizura 8"
               layout="responsive"
-              width={286}
-              height={112}
-              className="block"
-            />
-          </div>
-          <div className="gallery-item" style={{ flexBasis: '21.7%' }}>
-            <Image
-              src="/haircuts/haircut161.jpg"
-              alt="Frizura 161"
-              layout="responsive"
-              width={278}
-              height={119}
-              className="block"
-            />
-          </div>
-          <div className="gallery-item" style={{ flexBasis: '21.5%' }}>
-            <Image
-              src="/haircuts/haircut04.jpg"
-              alt="Frizura 4"
-              layout="responsive"
-              width={276}
-              height={113}
+              width={560}
+              height={219}
               className="block"
             />
           </div>
         </div>
       </div>
 
-      {/* CSS za responsivnost i animaciju */}
+      {/* CSS za responsivnost, animaciju i blur efekte */}
       <style jsx>{`
         .gallery-wrapper {
           width: 100%;
           max-width: 1281px;
           margin: 0 auto;
+          box-sizing: border-box;
         }
         .gallery-row {
           display: flex;
-          justify-content: space-between;
-          gap: 10px;
+          gap: 5px; /* Identican razmak između slika za sve redove */
           flex-wrap: nowrap;
+          justify-content: center; /* Centriranje sadržaja na desktopu */
         }
+        
+        /* Specifičan gap za prvi red na desktop verziji */
+        @media (min-width: 1281px) {
+          .first-row {
+            gap: 2px !important; /* Manji razmak za prvi red da vizuelno izgleda usklađeno */
+          }
+        }
+        
         .gallery-row + .gallery-row {
-          margin-top: 36px; /* Nadoknađuje mt-9 (9 * 4px = 36px prema Tailwind skali) */
+          margin-top: 5px; /* Razmak između redova na desktopu */
         }
+
         .gallery-item {
           flex: 0 0 auto;
-          opacity: 0; /* Početno stanje - slike su nevidljive */
-          transform: translateY(20px); /* Početno pomjeranje nadole */
+          opacity: 0;
+          transform: translateY(20px);
           transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+          position: relative;
+          flex-basis: var(--item-basis);
+          max-width: 100%;
         }
         .gallery-item.animate-in {
-          opacity: 1; /* Vidljive kada se pokrene animacija */
-          transform: translateY(0); /* Vraća se na normalnu poziciju */
+          opacity: 1;
+          transform: translateY(0);
         }
-        @media (max-width: 1281px) {
+
+        /* Osiguravanje da slike zadrže proporcije */
+        .gallery-item img {
+          object-fit: contain;
+          width: 100%;
+          height: auto;
+          max-width: 100%;
+        }
+
+        /* Blur efekti - samo za prvi i poslednji red */
+        .first-row .gallery-item::before,
+        .last-row .gallery-item::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          height: 15%;
+          pointer-events: none;
+          backdrop-filter: blur(1.8px);
+          -webkit-backdrop-filter: blur(1.8px);
+        }
+
+        .first-row .gallery-item::before {
+          top: 0;
+          background: linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0%, transparent 100%);
+        }
+
+        .last-row .gallery-item::after {
+          bottom: 0;
+          background: linear-gradient(to top, rgba(255, 255, 255, 0.45) 0%, transparent 100%);
+        }
+
+        /* Responsivnost za tablete (1280px do 481px) */
+        @media (max-width: 1280px) and (min-width: 481px) {
+          .gallery-wrapper {
+            max-width: calc(1281px * 1.15);
+            width: 100%;
+            box-sizing: border-box;
+          }
           .gallery-row {
-            gap: calc(7px * (100vw / 1281)); /* Smanjen bazni razmak na 7px */
+            gap: calc(5px * 1.15);
+            transform: none;
+            justify-content: center;
+            flex-wrap: nowrap;
           }
           .gallery-row + .gallery-row {
-            margin-top: 15px !important; /* Fiksni manji razmak između redova na mobilnoj */
+            margin-top: calc(5px * 1.15);
           }
           .gallery-item {
-            flex-basis: calc(var(--item-basis) * (100vw / 1281));
+            flex-basis: calc(var(--item-basis) * 1.15) !important;
+            max-width: 100%;
           }
         }
-        /* Inline stilovi za desktop */
-        .gallery-row:nth-child(1) .gallery-item:nth-child(1) { --item-basis: 492px; }
-        .gallery-row:nth-child(1) .gallery-item:nth-child(2) { --item-basis: 353px; }
-        .gallery-row:nth-child(1) .gallery-item:nth-child(3) { --item-basis: 352px; }
-        .gallery-row:nth-child(2) .gallery-item:nth-child(1) { --item-basis: 320px; }
-        .gallery-row:nth-child(2) .gallery-item:nth-child(2) { --item-basis: 286px; }
-        .gallery-row:nth-child(2) .gallery-item:nth-child(3) { --item-basis: 278px; }
-        .gallery-row:nth-child(2) .gallery-item:nth-child(4) { --item-basis: 276px; }
+
+        /* Mobilna verzija (480px i manje) */
+        @media (max-width: 480px) {
+          .gallery-wrapper {
+            max-width: calc(1281px * 1.15);
+            width: 100%;
+            box-sizing: border-box;
+          }
+          .gallery-row {
+            gap: calc(5px * 1.15);
+            transform: none;
+            justify-content: center;
+            flex-wrap: nowrap;
+          }
+          .gallery-row + .gallery-row {
+            margin-top: calc(5px * 1.15);
+          }
+          .gallery-item {
+            flex-basis: calc(var(--item-basis) * 1.15) !important;
+            max-width: 100%;
+          }
+          /* Specifično za srednji red */
+          .middle-row .gallery-item {
+            flex-basis: calc(var(--item-basis) * 1.13) !important; /* Blago smanjenje na 1.12 umesto 1.15 */
+          }
+          .middle-row .gallery-item img {
+            width: calc(100% * 0.97); /* Smanjenje širine slika za oko 3% radi fino podešavanja */
+            height: auto; /* Očuvanje proporcija */
+          }
+        }
       `}</style>
     </section>
   );
