@@ -15,6 +15,7 @@ html {
 
 @theme {
   --color-salon-purple: #4c3f75;
+    --color-salon-purpledark: #09001e;
   --color-salon-light: #f1ebfc;
   --color-salon-light-purple: #dcc9ff;
   --color-salon-black: #000000;
