@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative h-screen flex flex-col items-center pt-20 md:pt-4 justify-center bg-gradient-to-b from-white to-[#f9fafc]"
+      className="relative h-screen flex flex-col items-center md:pt-4 justify-center bg-gradient-to-b from-white to-[#f9fafc]"
     >
       {/* SVG Backgrounds */}
       <div className="absolute inset-0 w-full h-full opacity-10 overflow-hidden">

@@ -14,7 +14,7 @@ export default function Map() {
   return (
     <section
       id="map"
-      className="py-12 sm:py-16 px-4 sm:px-6 md:px-16 pt-20 md:pt-4 text-center bg-gradient-to-b from-[#F7F2FF] to-white"
+      className="py-12 sm:py-16 px-4 sm:px-6 md:px-16 md:pt-4 text-center bg-gradient-to-b from-[#F7F2FF] to-white"
     >
       <div className="max-w-7xl mx-auto">
         
