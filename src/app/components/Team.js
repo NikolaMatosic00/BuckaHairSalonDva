@@ -388,7 +388,7 @@ export default function Team() {
               <div className="relative">
                 <div className="team-frame w-[216px] h-[268px] relative">
                   <div className="frame-outer absolute inset-0" style={{ clipPath: 'path("M 0,68 Q 0,0 68,0 L 216,0 L 216,204 Q 216,268 152,268 L 0,268 L 0,68 Z")' }}>
-                    <div className="w-full h-full border-[4px] border-[#09001e] frame-border"></div>
+                    <div className="w-full h-full border-[2px] border-[#09001e] frame-border"></div>
                   </div>
                   <div className="frame-inner absolute inset-[4px]" style={{ clipPath: 'path("M 0,65 Q 0,0 65,0 L 209,0 L 209,197 Q 209,261 145,261 L 0,261 L 0,65 Z")' }}>
                     <Image
@@ -414,7 +414,7 @@ export default function Team() {
               <div className="relative">
                 <div className="team-frame w-[216px] h-[268px] relative">
                   <div className="frame-outer absolute inset-0" style={{ clipPath: 'path("M 0,68 Q 0,0 68,0 L 216,0 L 216,204 Q 216,268 152,268 L 0,268 L 0,68 Z")' }}>
-                    <div className="w-full h-full border-[4px] border-[#09001e] frame-border"></div>
+                    <div className="w-full h-full border-[2px] border-[#09001e] frame-border"></div>
                   </div>
                   <div className="frame-inner absolute inset-[4px]" style={{ clipPath: 'path("M 0,65 Q 0,0 65,0 L 209,0 L 209,197 Q 209,261 145,261 L 0,261 L 0,65 Z")' }}>
                     <Image
@@ -440,7 +440,7 @@ export default function Team() {
               <div className="relative">
                 <div className="team-frame w-[216px] h-[268px] relative">
                   <div className="frame-outer absolute inset-0" style={{ clipPath: 'path("M 0,68 Q 0,0 68,0 L 216,0 L 216,204 Q 216,268 152,268 L 0,268 L 0,68 Z")' }}>
-                    <div className="w-full h-full border-[4px] border-[#09001e] frame-border"></div>
+                    <div className="w-full h-full border-[2px] border-[#09001e] frame-border"></div>
                   </div>
                   <div className="frame-inner absolute inset-[4px]" style={{ clipPath: 'path("M 0,65 Q 0,0 65,0 L 209,0 L 209,197 Q 209,261 145,261 L 0,261 L 0,65 Z")' }}>
                     <Image
