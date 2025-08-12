@@ -62,7 +62,7 @@ export default function Hero() {
           href="https://instagram.com/salon_lepote_bucka"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-[#09001e] p-2 rounded-full text-white hover:bg-[#E1306C] transition-colors"
+          className="wobble-icon-hero bg-[#09001e] p-2 rounded-full text-white hover:bg-[#E1306C] transition-colors"
           aria-label="Instagram"
         >
           <FaInstagram className="w-6 h-6" />
@@ -71,7 +71,7 @@ export default function Hero() {
           href="https://wa.me/+381691168623"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-[#09001e] p-2 rounded-full text-white hover:bg-[#25D366] transition-colors"
+          className="wobble-icon-hero bg-[#09001e] p-2 rounded-full text-white hover:bg-[#25D366] transition-colors"
           aria-label="WhatsApp"
         >
           <FaWhatsapp className="w-6 h-6" />
@@ -80,7 +80,7 @@ export default function Hero() {
           href="https://www.facebook.com/salonbucka/"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-[#09001e] p-2 rounded-full text-white hover:bg-[#1877F2] transition-colors"
+          className="wobble-icon-hero bg-[#09001e] p-2 rounded-full text-white hover:bg-[#1877F2] transition-colors"
           aria-label="Facebook"
         >
           <FaFacebook className="w-6 h-6" />
@@ -89,7 +89,7 @@ export default function Hero() {
           href="viber://chat?number=+381691168623"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-[#09001e] p-2 rounded-full text-white hover:bg-[#7360F2] transition-colors"
+          className="wobble-icon-hero bg-[#09001e] p-2 rounded-full text-white hover:bg-[#7360F2] transition-colors"
           aria-label="Viber"
         >
           <FaViber className="w-6 h-6" />
