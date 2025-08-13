@@ -51,16 +51,16 @@ export default function Home() {
     });
 
     // Provera slika u Gallery
-    const images = document.querySelectorAll('section#gallery img');
-    console.log('Found images in gallery:', images.length);
-    images.forEach((img, i) => {
-      if (img.complete) {
-        console.log(`Image ${i + 1} already loaded`);
-      } else {
-        img.addEventListener('load', () => console.log(`Image ${i + 1} loaded`));
-        img.addEventListener('error', () => console.log(`Image ${i + 1} failed to load`));
-      }
-    });
+    // const images = document.querySelectorAll('section#gallery img');
+    // console.log('Found images in gallery:', images.length);
+    // images.forEach((img, i) => {
+    //   if (img.complete) {
+    //     console.log(`Image ${i + 1} already loaded`);
+    //   } else {
+    //     img.addEventListener('load', () => console.log(`Image ${i + 1} loaded`));
+    //     img.addEventListener('error', () => console.log(`Image ${i + 1} failed to load`));
+    //   }
+    // });
 
     return () => {
       elements.forEach((element) => {
