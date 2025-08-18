@@ -42,7 +42,7 @@ export default function Contact() {
             </a>
           </motion.div>
 
-          <div className="hidden sm:block w-1/2 mx-auto h-px bg-gray-200"></div>
+          {/* <div className="hidden sm:block w-1/2 mx-auto h-px bg-gray-200"></div> */}
 
           <motion.div
             className="flex justify-center items-center gap-3"
