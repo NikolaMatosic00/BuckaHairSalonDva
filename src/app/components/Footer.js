@@ -5,7 +5,7 @@ import { FaInstagram, FaFacebook, FaWhatsapp, FaViber } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="bg-salon-purple text-white px-6 sm:px-12 md:px-24 py-6">
+    <footer className="bg-gradient-to-br from-[#2c2c52] via-[#16213e] to-[#0f3460] text-white px-6 sm:px-12 md:px-24 py-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
         {/* Branding */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-4">
