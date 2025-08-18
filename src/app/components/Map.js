@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { MapPinIcon } from 'lucide-react';
 
 export default function Map() {
   // Varijante za animacije
@@ -40,24 +41,31 @@ export default function Map() {
           ></iframe>
         </motion.div>
 
-        {/* Open in Google Maps Button */}
-        <motion.div
-          className="mt-6"
-          custom={2}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={itemVariants}
-        >
-        <a
-          href="https://maps.google.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group button-bordered inline-flex items-center justify-center bg-[#09001e] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base transition-all"
-            >
-          Otvori u Google Mapama
-        </a>
-        </motion.div>
+{/* Open in Google Maps Button */}
+<motion.div
+  className="mt-6"
+  custom={2}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={itemVariants}
+>
+  <a
+    href="https://maps.google.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group button-bordered inline-flex items-center justify-center bg-[#09001e] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base transition-all"
+  >
+    <span className="inline-flex items-center justify-center">
+      <MapPinIcon
+        className="w-0 h-5 opacity-0 group-hover:w-5 group-hover:opacity-100 mr-2 transition-all duration-500"
+        aria-hidden="true"
+      />
+      <span>Otvori u Google Mapama</span>
+    </span>
+  </a>
+</motion.div>
+
       </div>
     </section>
   );
