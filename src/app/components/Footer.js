@@ -14,7 +14,7 @@ export default function Footer() {
             alt="Salon Lepote Bucka"
             width={90}
             height={90}
-            className="m-auto"
+            className="m-auto mb-5"
           />
           <p className="text-sm opacity-90 leading-relaxed">
             Istaknite svoju lepotu uz našu profesionalnu negu. Vaša kosa zaslužuje najbolje.
