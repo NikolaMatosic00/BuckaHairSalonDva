@@ -3,15 +3,10 @@ export default function Reviews() {
   return (
     <section
       id="reviews"
-      className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 md:pt-4 text-center bg-gradient-to-b from-salon-light to-white"
+      className="py-12 sm:py-16 px-2 sm:px-4 md:px-16 text-center bg-gradient-to-b from-salon-light to-white"
     > 
       <div className="max-w-7xl mx-auto relative">
-        <h2
-          className="text-5xl sm:text-7xl text-salon-black mb-12 mt-4 animate-on-scroll great-vibes"
-          data-animate-type="heading"
-        >
-          Recenzije klijenata
-        </h2>
+
         <div
           className="max-w-5xl mx-auto px-5 animate-on-scroll review-card"
           data-animate-delay="200"

@@ -35,7 +35,7 @@ export default function ContactClient() {
   return (
     <div className="flex flex-col gap-8 items-center justify-center">
       {/* Kontakt podaci */}
-      <div className="w-full max-w-lg flex flex-col gap-6">
+      <div className="w-full flex flex-col sm:flex-row gap-6 justify-center items-stretch">
         {contactItems.map((item, i) => (
           <motion.a
             key={item.label}
