@@ -1,6 +1,6 @@
 // app/components/About.js
 
-import AboutClient from './client/AboutClient';
+import AboutClient from './AboutClient';
 
 export default function About() {
   return (

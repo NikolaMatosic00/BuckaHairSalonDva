@@ -3,10 +3,6 @@
 import {
   FaPhone,
   FaEnvelope,
-  FaInstagram,
-  FaFacebook,
-  FaWhatsapp,
-  FaViber,
 } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
@@ -35,32 +31,6 @@ export default function ContactClient() {
     },
   ];
 
-  const socialItems = [
-    {
-      icon: <FaInstagram />,
-      href: 'https://instagram.com/salon_lepote_bucka',
-      color: '#E1306C',
-      label: 'Instagram',
-    },
-    {
-      icon: <FaFacebook />,
-      href: 'https://www.facebook.com/salonbucka/',
-      color: '#1877F2',
-      label: 'Facebook',
-    },
-    {
-      icon: <FaWhatsapp />,
-      href: 'https://wa.me/+381691168623',
-      color: '#25D366',
-      label: 'WhatsApp',
-    },
-    {
-      icon: <FaViber />,
-      href: 'viber://chat?number=+381691168623',
-      color: '#7360F2',
-      label: 'Viber',
-    },
-  ];
 
   return (
     <div className="flex flex-col gap-8 items-center justify-center">
@@ -87,32 +57,6 @@ export default function ContactClient() {
           </motion.a>
         ))}
       </div>
-
-      {/* Social ikonice */}
-      <motion.div
-        className="flex gap-6 mt-6"
-        custom={contactItems.length}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={itemVariants}
-      >
-        {socialItems.map(({ icon, href, color, label }, i) => (
-          <a
-            key={label}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-salon-purpledark hover:scale-110 transition-transform duration-300"
-            aria-label={label}
-            style={{ color }}
-          >
-            <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
-              {icon}
-            </div>
-          </a>
-        ))}
-      </motion.div>
     </div>
   );
 }

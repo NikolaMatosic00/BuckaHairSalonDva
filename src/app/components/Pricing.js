@@ -58,9 +58,9 @@ const pricingData = [
   },
 ];
 
-// Komponenta za prikaz jednog reda
+// Komponenta za jedan red
 const PriceRow = ({ name, price, isHeader = false }) => (
-  <div className={`flex items-center gap-1 ${isHeader ? 'mb-0.5' : 'mb-0.5'}`}>
+  <div className={`flex items-center gap-1 ${isHeader ? 'mb-0.5 font-semibold' : 'mb-0.5'}`}>
     <span
       className={isHeader ? 'w-0' : 'flex-none max-w-[55%] xs:max-w-[60%] sm:max-w-[50%] md:max-w-[40%] text-[10px] xs:text-xs sm:text-sm md:text-base whitespace-normal break-words'}
     >
@@ -73,11 +73,11 @@ const PriceRow = ({ name, price, isHeader = false }) => (
   </div>
 );
 
-// Komponenta za prikaz sekcije
+// Komponenta za sekciju
 const PricingSection = ({ title, items }) => (
   <div>
-    <h3 className="text-xl sm:text-2xl md:text-3xl mb-4 text-purple-600 great-vibes text-center">{title}</h3>
-    <div className="text-left">
+    <h3 className="text-xl sm:text-2xl md:text-3xl mb-4 text-white great-vibes text-center">{title}</h3>
+    <div className="text-left" role="list">
       <PriceRow isHeader price="Kratka/Srednja/Duga/Extra duga" />
       <ul className="space-y-1 sm:space-y-2">
         {items.map((item, index) => (
@@ -90,40 +90,48 @@ const PricingSection = ({ title, items }) => (
   </div>
 );
 
+// Glavna komponenta
 export default function Pricing() {
   return (
     <section
       id="pricing"
       className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-16 bg-gradient-to-br from-[#2c2c52] via-[#16213e] to-[#0f3460] min-h-screen flex flex-col items-center justify-start relative overflow-hidden scroll-mt-20"
+      aria-labelledby="pricing-heading"
+      lang="sr"
     >
-      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-8 sm:mb-12 md:mb-16 great-vibes">
+      <h2
+        id="pricing-heading"
+        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-8 sm:mb-12 md:mb-16 great-vibes"
+      >
         Cenovnik
       </h2>
 
-      {/* Pozadinska slika leptira */}
+      {/* Pozadinska slika */}
       <Image
         src="/background-images/butterfly_1_white.svg"
-        alt="Pozadina leptir"
+        alt=""
         fill
         className="absolute inset-0 w-full h-full object-contain opacity-10 pointer-events-none select-none"
         loading="lazy"
+        role="presentation"
       />
 
-      {/* Dekorativni leptiri u uglovima (samo za md+ ekrane) */}
+      {/* Dekorativni leptiri */}
       {[
-        { position: 'top-50 left-50', opacity: 'opacity-50', rotate: '-rotate-[15deg]', margin: '-ml-5 sm:-ml-10 -mt-5 sm:-mt-10', size: { xs: 80, md: 140 } },
-        { position: 'top-20 right-30', opacity: 'opacity-35', rotate: 'rotate-[25deg]', margin: '-mr-5 sm:-mr-10 -mt-4 sm:-mt-8', size: { xs: 60, md: 120 } },
-        { position: 'bottom-10 left-10', opacity: 'opacity-20', rotate: 'rotate-[45deg]', margin: '-mb-5 sm:-mb-10 -ml-4 sm:-ml-8', size: { xs: 100, md: 160 } },
-        { position: 'bottom-0 right-0', opacity: 'opacity-20', rotate: '-rotate-[30deg]', margin: '-mb-4 sm:-mb-8 -mr-4 sm:-mr-8', size: { xs: 70, md: 130 } },
+        { position: 'top-50 left-50', opacity: 'opacity-50', rotate: '-rotate-[15deg]', margin: '-ml-5 sm:-ml-10 -mt-5 sm:-mt-10', size: { md: 140 } },
+        { position: 'top-20 right-30', opacity: 'opacity-35', rotate: 'rotate-[25deg]', margin: '-mr-5 sm:-mr-10 -mt-4 sm:-mt-8', size: { md: 120 } },
+        { position: 'bottom-10 left-10', opacity: 'opacity-20', rotate: 'rotate-[45deg]', margin: '-mb-5 sm:-mb-10 -ml-4 sm:-ml-8', size: { md: 160 } },
+        { position: 'bottom-0 right-0', opacity: 'opacity-20', rotate: '-rotate-[30deg]', margin: '-mb-4 sm:-mb-8 -mr-4 sm:-mr-8', size: { md: 130 } },
       ].map((butterfly, index) => (
         <div key={index} className={`hidden md:block absolute ${butterfly.position} z-0`}>
           <Image
             src="/background-images/butterfly_1_white.svg"
-            alt={`Leptir ${index + 1}`}
+            alt=""
             width={butterfly.size.md}
             height={butterfly.size.md}
             className={`${butterfly.opacity} ${butterfly.rotate} ${butterfly.margin}`}
             loading="lazy"
+            role="presentation"
           />
         </div>
       ))}

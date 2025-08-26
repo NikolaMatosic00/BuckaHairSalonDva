@@ -1,6 +1,6 @@
 // src/app/layout.js
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Footer from './components/footer/Footer';
 import { Poppins, Great_Vibes } from 'next/font/google';
 import './styles/globals.css';
 

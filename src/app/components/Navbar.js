@@ -9,7 +9,7 @@ export default function Navbar() {
   const sidebarRef = useRef(null);
   const arrowRef = useRef(null);
   const timeoutRef = useRef(null);
-  const navbarRef = useRef(null); // << dodato za mobilni navbar
+  const navbarRef = useRef(null); // koristi se za scroll offset
 
   useEffect(() => {
     const sidebarEl = sidebarRef.current;
@@ -60,22 +60,25 @@ export default function Navbar() {
       <nav
         ref={sidebarRef}
         className="hidden md:flex fixed top-0 left-0 h-full w-16 bg-salon-purpledark z-[1000] flex-col items-center py-6 transition-all duration-300 ease-in-out hover:w-64 hover:bg-white group shadow-lg sidebar"
+        aria-label="Glavna navigacija"
       >
         <div className="mb-8 relative">
-          <Link href="#hero">
+          <Link href="#hero" aria-label="Povratak na početak">
             <Image
               src="/logo/logo192x192white.png"
-              alt="Salon Lepote Bucka"
+              alt="Salon Lepote Bucka logo"
               width={40}
               height={40}
               className="group-hover:hidden"
+              loading="lazy"
             />
             <Image
               src="/logo/logo192x192.png"
-              alt="Salon Lepote Bucka"
+              alt="Salon Lepote Bucka logo"
               width={40}
               height={40}
               className="hidden group-hover:block"
+              loading="lazy"
             />
           </Link>
           <span
@@ -100,12 +103,14 @@ export default function Navbar() {
             </svg>
           </span>
         </div>
+
         <ul className="flex flex-col space-y-4 text-white group-hover:text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           {navLinks.map((link) => (
             <li key={link.href} className="px-4">
               <Link
                 href={link.href}
                 className="text-white group-hover:text-black hover:text-gray-300 group-hover:hover:text-gray-600 text-lg"
+                aria-label={`Link ka sekciji ${link.label}`}
               >
                 {link.label}
               </Link>
@@ -114,23 +119,25 @@ export default function Navbar() {
         </ul>
       </nav>
 
-      {/* Mobile Hamburger Button */}
+      {/* Mobile Hamburger */}
       <div
         ref={navbarRef}
         className="md:hidden fixed top-0 left-0 w-full bg-black z-[1000] flex items-center justify-between px-4 py-3"
       >
-        <Link href="#hero">
+        <Link href="#hero" aria-label="Početna stranica">
           <Image
             src="/logo/logo192x192white.png"
-            alt="Salon Lepote Bucka"
+            alt="Salon Lepote Bucka logo"
             width={40}
             height={40}
+            loading="lazy"
           />
         </Link>
         <button
           onClick={toggleMenu}
           className="text-white focus:outline-none"
-          aria-label="Toggle menu"
+          aria-label={isOpen ? 'Zatvori meni' : 'Otvori meni'}
+          aria-expanded={isOpen}
         >
           <svg
             className="w-8 h-8"
@@ -163,7 +170,14 @@ export default function Navbar() {
         className={`md:hidden fixed top-0 left-0 w-full h-full bg-black z-[900] flex flex-col items-center justify-center transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
+        role="dialog"
+        aria-modal="true"
       >
+        {/* Screen reader obaveštenje */}
+        <div aria-live="polite" className="sr-only">
+          {isOpen ? 'Navigacija otvorena' : 'Navigacija zatvorena'}
+        </div>
+
         <ul className="flex flex-col space-y-8 text-white text-center">
           {navLinks.map((link) => (
             <li key={link.href}>
@@ -185,6 +199,7 @@ export default function Navbar() {
                   }
                   toggleMenu();
                 }}
+                aria-label={`Idi na sekciju ${link.label}`}
               >
                 {link.label}
               </a>

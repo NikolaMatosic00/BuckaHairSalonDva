@@ -1,4 +1,4 @@
-import ContactClient from './client/ContactClient';
+import ContactClient from './ContactClient';
 
 export default function Contact() {
   return (

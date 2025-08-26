@@ -1,4 +1,3 @@
-'use client';
 import Link from 'next/link';
 import { ScissorsIcon } from 'lucide-react';
 import Image from 'next/image';
@@ -14,7 +13,7 @@ export default function Hero() {
       <div className="absolute inset-0 w-full h-full opacity-10 overflow-hidden">
         <Image
           src="/background-images/flower_1.svg"
-          alt="Flower 1"
+          alt="Flower decoration in background"
           width={512}
           height={512}
           className="absolute bottom-0 left-0 w-72 md:w-[20rem] lg:w-[28rem]"
@@ -23,7 +22,7 @@ export default function Hero() {
         />
         <Image
           src="/background-images/butterfly_2.svg"
-          alt="Butterfly 2"
+          alt="Butterfly decoration in background"
           width={512}
           height={512}
           className="absolute top-0 right-0 w-72 md:w-[20rem] lg:w-[24rem] z-0"
@@ -34,9 +33,7 @@ export default function Hero() {
 
       {/* Main Content */}
       <div className="relative text-center text-salon-black z-10">
-        <h1
-          className="text-6xl sm:text-5xl md:text-7xl font-bold mb-4 great-vibes gradient-title"
-        >
+        <h1 className="text-6xl sm:text-5xl md:text-7xl font-bold mb-4 great-vibes gradient-title">
           Salon Lepote Bucka
         </h1>
         <p className="text-base sm:text-lg md:text-2xl mb-6 drop-shadow-md">
@@ -44,7 +41,7 @@ export default function Hero() {
         </p>
         <Link
           href="#pricing"
-          className="group button-bordered inline-flex items-center justify-center bg-[#09001e] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base transition-all"
+          className="group button-bordered inline-flex items-center justify-center bg-[#09001e] text-white px-6 sm:px8 py-3 sm:py-4 rounded-full font-medium text-sm sm:text-base transition-all"
         >
           <span className="inline-flex items-center justify-center">
             <ScissorsIcon
@@ -56,7 +53,7 @@ export default function Hero() {
         </Link>
       </div>
 
-      {/* Social Media Links */}
+      {/* Social Links */}
       <div className="absolute bottom-16 flex items-center space-x-4 z-10">
         <Link
           href="https://instagram.com/salon_lepote_bucka"
